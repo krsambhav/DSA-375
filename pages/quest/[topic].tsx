@@ -29,7 +29,7 @@ export default function Questions() {
     <Head><title>{title}</title></Head>
     <main className="w-screen p-10 flex flex-col items-center">
     <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw]">
-        <div className="icon md:fixed md:left-10"><Link href={'/'}><a><IoIosArrowRoundBack /></a></Link></div> <div className="title">{readyToShow && title}</div> <div className="md:fixed"><IoIosArrowRoundBack className="opacity-0" /></div>
+        <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 "><Link href={'/'}><a><IoIosArrowRoundBack /></a></Link></div> <div className="title">{readyToShow && title}</div> <div className="md:fixed"><IoIosArrowRoundBack className="opacity-0" /></div>
       </div>
       <div className="time-container mt-12 flex flex-row flex-wrap gap-5">
         <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">5-10 mins</div>
