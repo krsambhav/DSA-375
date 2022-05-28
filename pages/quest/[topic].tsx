@@ -20,7 +20,7 @@ export default function Questions() {
     setQuestions(questionData.filter((set) => set.topic===topic)[0])
     setTitle(questionData.filter((set) => set.topic===topic)[0]['title']);
     setReadyToShow(true);
-  }, [router.isReady])
+  }, [topic, router.isReady])
   
   return (
     <>
