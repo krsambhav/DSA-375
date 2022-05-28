@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react";
 import QuestionCard from "../../components/QuestionCard";
 import questionData from '../../public/data.json';
-import {IoIosArrowRoundBack} from 'react-icons/io';
+import {IoIosArrowRoundBack, IoLogoGithub} from 'react-icons/io';
 import Link from "next/link";
 
 export default function Questions() {
@@ -44,6 +44,9 @@ export default function Questions() {
       })}
       </div>
     </main>
+    <footer className="w-screen flex flow-row justify-center my-10">
+      <a href="https://github.com/krsambhav/DSA-375/" target={"_blank"} rel="noreferrer"><IoLogoGithub className="text-2xl" /></a>
+    </footer>
     </>
   )
 }
