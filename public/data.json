@@ -1,0 +1,407 @@
+[
+  {
+    "topic": "arrays",
+    "title": "Arrays",
+    "problems": [
+      {
+        "title": "Maximum and Minimum Element in an Array",
+        "url": "https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/",
+        "level": "easy"
+      },
+      {
+        "title": "Reverse the Array",
+        "url": "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/",
+        "level": "easy"
+      },
+      {
+        "title": "Maximum-Subarray",
+        "url": "https://leetcode.com/problems/maximum-subarray/",
+        "level": "easy"
+      },
+      {
+        "title": "Contains Duplicate",
+        "url": "https://leetcode.com/problems/contains-duplicate/",
+        "level": "easy"
+      },
+      {
+        "title": "Chocolate Distribution Problem",
+        "url": "https://www.geeksforgeeks.org/chocolate-distribution-problem/",
+        "level": "easy"
+      },
+      {
+        "title": "Search an Element in a Sorted and Pivoted Array",
+        "url": "https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/",
+        "level": "easy"
+      },
+      {
+        "title": "Next Permutation",
+        "url": "https://leetcode.com/problems/next-permutation/",
+        "level": "medium"
+      },
+      {
+        "title": "Best time to Buy and Sell Stock",
+        "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+        "level": "medium"
+      },
+      {
+        "title": "Repeat and Missing Number Array",
+        "url": "https://www.interviewbit.com/problems/repeat-and-missing-number-array/",
+        "level": "medium"
+      },
+      {
+        "title": "Kth-Largest Element in an Array",
+        "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+        "level": "medium"
+      },
+      {
+        "title": "Trapping Rain Water",
+        "url": "https://leetcode.com/problems/trapping-rain-water/",
+        "level": "medium"
+      },
+      {
+        "title": "Product of Array Except Self",
+        "url": "https://leetcode.com/problems/product-of-array-except-self/",
+        "level": "medium"
+      },
+      {
+        "title": "Maximum Product Subarray",
+        "url": "https://leetcode.com/problems/maximum-product-subarray/",
+        "level": "medium"
+      },
+      {
+        "title": "Find Minimum in Rotated Sorted Array",
+        "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+        "level": "medium"
+      },
+      {
+        "title": "Search in Rotated Sorted Array",
+        "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+        "level": "medium"
+      },
+      {
+        "title": "3 Sum",
+        "url": "https://leetcode.com/problems/3sum/",
+        "level": "medium"
+      },
+      {
+        "title": "Container With Most Water",
+        "url": "https://leetcode.com/problems/container-with-most-water/",
+        "level": "medium"
+      },
+      {
+        "title": "Given Sum Pair",
+        "url": "https://www.geeksforgeeks.org/given-a-sorted-and-rotated-array-find-if-there-is-a-pair-with-a-given-sum/",
+        "level": "medium"
+      },
+      {
+        "title": "Kth - Smallest Element",
+        "url": "https://practice.geeksforgeeks.org/problems/kth-smallest-element5635/1",
+        "level": "medium"
+      },
+      {
+        "title": "Merge Overlapping Intervals",
+        "url": "https://www.geeksforgeeks.org/merging-intervals/",
+        "level": "medium"
+      },
+      {
+        "title": "Find Minimum Number of Merge Operations to Make an Array Palindrome",
+        "url": "https://www.geeksforgeeks.org/find-minimum-number-of-merge-operations-to-make-an-array-palindrome/",
+        "level": "medium"
+      },
+      {
+        "title": "Given an Array of Numbers Arrange the Numbers to Form the Biggest Number",
+        "url": "https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/",
+        "level": "medium"
+      },
+      {
+        "title": "Space Optimization Using Bit Manipulations",
+        "url": "https://www.geeksforgeeks.org/space-optimization-using-bit-manipulations/",
+        "level": "medium"
+      },
+      {
+        "title": "Subarray Sum Divisible K",
+        "url": "https://www.geeksforgeeks.org/longest-subarray-sum-divisible-k/",
+        "level": "hard"
+      },
+      {
+        "title": "Print all Possible Combinations of r Elements in a Given Array of Size n",
+        "url": "https://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/",
+        "level": "hard"
+      },
+      {
+        "title": "Mo's Algorithm",
+        "url": "https://www.geeksforgeeks.org/mos-algorithm-query-square-root-decomposition-set-1-introduction/",
+        "level": "hard"
+      }
+    ]
+  },
+  {
+    "topic": "strings",
+    "title": "Strings",
+    "problems": [
+      {
+        "title": "Valid Palindrome",
+        "url": "https://leetcode.com/problems/valid-palindrome/",
+        "level": "easy"
+      },
+      {
+        "title": "Valid Anagram",
+        "url": "https://leetcode.com/problems/valid-anagram/",
+        "level": "easy"
+      },
+      {
+        "title": "Valid parentheses",
+        "url": "https://leetcode.com/problems/valid-parentheses/",
+        "level": "easy"
+      },
+      {
+        "title": "Remove Consecutive Characters",
+        "url": "https://practice.geeksforgeeks.org/problems/consecutive-elements2306/1",
+        "level": "easy"
+      },
+      {
+        "title": "Longest Common Prefix",
+        "url": "https://leetcode.com/problems/longest-common-prefix/",
+        "level": "easy"
+      },
+      {
+        "title": "Convert a Sentence into its Equivalent Mobile Numeric Keypad Sequence",
+        "url": "https://www.geeksforgeeks.org/convert-sentence-equivalent-mobile-numeric-keypad-sequence/",
+        "level": "easy"
+      },
+      {
+        "title": "Print all the Duplicates in the Input String",
+        "url": "https://www.geeksforgeeks.org/print-all-the-duplicates-in-the-input-string/",
+        "level": "easy"
+      },
+      {
+        "title": "Longest Substring without Repeating Characters",
+        "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+        "level": "medium"
+      },
+      {
+        "title": "Longest Repeating Character Replacement",
+        "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+        "level": "medium"
+      },
+      {
+        "title": "Group Anagrams",
+        "url": "https://leetcode.com/problems/group-anagrams/",
+        "level": "medium"
+      },
+      {
+        "title": "Longest Palindromic Substring",
+        "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+        "level": "medium"
+      },
+      {
+        "title": "Palindromic Substrings",
+        "url": "https://leetcode.com/problems/palindromic-substrings/",
+        "level": "medium"
+      },
+      {
+        "title": "Next Permutation",
+        "url": "https://practice.geeksforgeeks.org/problems/next-permutation5226/1",
+        "level": "medium"
+      },
+      {
+        "title": "Count Palindromic Subsequences",
+        "url": "https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1",
+        "level": "medium"
+      },
+      {
+        "title": "Smallest window in a string containing all the characters of another string",
+        "url": "https://practice.geeksforgeeks.org/problems/smallest-window-in-a-string-containing-all-the-characters-of-another-string-1587115621/1",
+        "level": "medium"
+      },
+      {
+        "title": "Wildcard string matching",
+        "url": "https://practice.geeksforgeeks.org/problems/wildcard-string-matching1126/1",
+        "level": "medium"
+      },
+      {
+        "title": "Longest Prefix Suffix",
+        "url": "https://practice.geeksforgeeks.org/problems/longest-prefix-suffix2527/1",
+        "level": "medium"
+      },
+      {
+        "title": "Rabin-Karp Algorithm for Pattern Searching",
+        "url": "https://www.geeksforgeeks.org/rabin-karp-algorithm-for-pattern-searching/",
+        "level": "medium"
+      },
+      {
+        "title": "Transform One String to Another using Minimum Number of Given Operation",
+        "url": "https://www.geeksforgeeks.org/transform-one-string-to-another-using-minimum-number-of-given-operation/",
+        "level": "medium"
+      },
+      {
+        "title": "Minimum Window Substring",
+        "url": "https://leetcode.com/problems/minimum-window-substring/",
+        "level": "hard"
+      },
+      {
+        "title": "Boyer Moore Algorithm for Pattern Searching",
+        "url": "https://www.geeksforgeeks.org/boyer-moore-algorithm-for-pattern-searching/",
+        "level": "hard"
+      },
+      {
+        "title": "Word Wrap",
+        "url": "https://practice.geeksforgeeks.org/problems/word-wrap1646/1",
+        "level": "hard"
+      }
+    ]
+  },
+  {
+    "topic": "2darrays",
+    "title": "2D Arrays",
+    "problems": [
+      {
+        "title": "Zigzag (or diagonal) Traversal of Matrix",
+        "url": "https://www.geeksforgeeks.org/zigzag-or-diagonal-traversal-of-matrix/",
+        "level": "easy"
+      },
+      {
+        "title": "Set Matrix Zeroes",
+        "url": "https://leetcode.com/problems/set-matrix-zeroes/",
+        "level": "easy"
+      },
+      {
+        "title": "Spiral Matrix",
+        "url": "https://leetcode.com/problems/spiral-matrix/",
+        "level": "easy"
+      },
+      {
+        "title": "Rotate Image",
+        "url": "https://leetcode.com/problems/rotate-image/",
+        "level": "easy"
+      },
+      {
+        "title": "Word Search",
+        "url": "https://leetcode.com/problems/word-search/",
+        "level": "easy"
+      },
+      {
+        "title": "Find the Number of Islands | Set 1 (Using DFS)",
+        "url": "https://www.geeksforgeeks.org/find-number-of-islands/",
+        "level": "easy"
+      },
+      {
+        "title": "Given a Matrix of ‘O’ and ‘X’, Replace ‘O’ with ‘X’ if Surrounded by ‘X’",
+        "url": "https://www.geeksforgeeks.org/given-matrix-o-x-replace-o-x-surrounded-x/",
+        "level": "easy"
+      },
+      {
+        "title": "Find a Common Element in all Rows of a Given Row-Wise Sorted Matrix",
+        "url": "https://www.geeksforgeeks.org/find-common-element-rows-row-wise-sorted-matrix/",
+        "level": "easy"
+      },
+      {
+        "title": "Create a Matrix with Alternating Rectangles of O and X",
+        "url": "https://www.geeksforgeeks.org/create-a-matrix-with-alternating-rectangles-of-0-and-x/",
+        "level": "easy"
+      },
+      {
+        "title": "Maximum Size Rectangle of all 1s",
+        "url": "https://www.geeksforgeeks.org/maximum-size-rectangle-binary-sub-matrix-1s/",
+        "level": "hard"
+      }
+    ]
+  },
+  {
+    "topic": "searchingandsorting",
+    "title": "Searching & Sorting",
+    "problems": [
+      {
+        "title": "Permute Two Arrays such that Sum of Every Pair is Greater or Equal to K",
+        "url": "https://www.geeksforgeeks.org/permute-two-arrays-sum-every-pair-greater-equal-k/",
+        "level": "easy"
+      },
+      { "title": "counting sort", "url": "https://www.geeksforgeeks.org/counting-sort/", "level": "easy" },
+      {
+        "title": "find common elements three sorted arrays",
+        "url": "https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/",
+        "level": "easy"
+      },
+      {
+        "title": "Searching in an array where adjacent differ by at most k",
+        "url": "https://www.geeksforgeeks.org/searching-array-adjacent-differ-k/",
+        "level": "easy"
+      },
+      {
+        "title": "ceiling in a sorted array",
+        "url": "https://www.geeksforgeeks.org/ceiling-in-a-sorted-array/",
+        "level": "easy"
+      },
+      {
+        "title": "Find a pair with given difference",
+        "url": "https://www.geeksforgeeks.org/find-a-pair-with-the-given-difference/",
+        "level": "easy"
+      },
+      { "title": "majority element", "url": "https://www.geeksforgeeks.org/majority-element/", "level": "medium" },
+      {
+        "title": "count triplets with sum smaller that a given value",
+        "url": "https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value/",
+        "level": "medium"
+      },
+      {
+        "title": "Maximum Sum Subsequence with no adjacent elements",
+        "url": "https://www.geeksforgeeks.org/maximum-sum-such-that-no-two-elements-are-adjacent/",
+        "level": "medium"
+      },
+      {
+        "title": "Merge Sorted Arrays using O(1) Space",
+        "url": "https://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/",
+        "level": "medium"
+      },
+      { "title": "Inversion of Array", "url": "https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1", "level": "medium" },
+      {
+        "title": "Find Duplicates in O(n) Time and O(1) Extra Space ",
+        "url": "https://www.geeksforgeeks.org/find-duplicates-in-on-time-and-constant-extra-space/",
+        "level": "medium"
+      },
+      { "title": "Radix Sort", "url": "https://www.geeksforgeeks.org/radix-sort/", "level": "medium" },
+      {
+        "title": "Product of Array except itself",
+        "url": "https://www.geeksforgeeks.org/a-product-array-puzzle/",
+        "level": "medium"
+      },
+      {
+        "title": "Make all Array Elements Equal",
+        "url": "https://www.geeksforgeeks.org/make-array-elements-equal-minimum-cost/",
+        "level": "medium"
+      },
+      {
+        "title": "Check if Reversing a Sub Array Make the Array Sorted",
+        "url": "https://www.geeksforgeeks.org/check-reversing-sub-array-make-array-sorted/",
+        "level": "medium"
+      },
+      {
+        "title": "Find Four Elements that Sum to a Given Value",
+        "url": "https://www.geeksforgeeks.org/find-four-elements-that-sum-to-a-given-value-set-2/",
+        "level": "hard"
+      },
+      {
+        "title": "Median of Two Sorted Array with Different Size",
+        "url": "https://www.geeksforgeeks.org/median-of-two-sorted-arrays-of-different-sizes/",
+        "level": "hard"
+      },
+      {
+        "title": "Median of Stream of Integers Running Integers",
+        "url": "https://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/",
+        "level": "hard"
+      },
+      {
+        "title": "Print Subarrays with 0 Sum",
+        "url": "https://www.geeksforgeeks.org/print-all-subarrays-with-0-sum/",
+        "level": "hard"
+      },
+      { "title": "Aggressive Cows", "url": "https://www.spoj.com/problems/AGGRCOW/", "level": "hard" },
+      {
+        "title": "Allocate Minimum number of Pages",
+        "url": "https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1",
+        "level": "hard"
+      },
+      { "title": "Minimum Swaps to Sort", "url": "https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/", "level": "hard" }
+    ]
+  }
+]

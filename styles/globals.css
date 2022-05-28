@@ -1,16 +1,45 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
-  box-sizing: border-box;
+  font-family: "Titillium Web";
+}
+
+.card {
+  box-shadow: 4px 4px black;
+  text-transform: capitalize;
+}
+
+.card:hover {
+  box-shadow: none;
+  background-color: black;
+  color: white;
+}
+
+.easy {
+  box-shadow: 4px 4px yellowgreen;
+}
+
+.easy:hover {
+  background-color: yellowgreen;
+  border-color: transparent;
+}
+
+.medium {
+  box-shadow: 4px 4px orange;
+}
+.medium:hover {
+  background-color: orange;
+  border-color: transparent;
+}
+
+.hard {
+  box-shadow: 4px 4px rgb(255, 62, 62);
+}
+.hard:hover {
+  background-color: rgb(255, 62, 62);
+  border-color: transparent;
 }
