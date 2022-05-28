@@ -821,12 +821,14 @@
       {
         "title": "Merge sort for linked list",
         "url": "https://www.geeksforgeeks.org/merge-sort-for-linked-list/",
-        "level": "hard"
+        "level": "hard",
+        "remark" : "Important"
       },
       {
         "title": "Quicksort on singly-linked list",
         "url": "https://www.geeksforgeeks.org/quicksort-on-singly-linked-list/",
-        "level": "hard"
+        "level": "hard",
+        "remark" : "Important"
       },
       {
         "title": "Sum of two linked lists",
@@ -1214,7 +1216,8 @@
       {
         "title": "Largest BST in a Binary Tree",
         "url": "https://www.geeksforgeeks.org/largest-bst-binary-tree-set-2/",
-        "level": "hard"
+        "level": "hard",
+        "remark" : "Important"
       }
     ]
   },
@@ -1526,7 +1529,8 @@
       {
         "title": "Kruskals MST",
         "url": "https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/",
-        "level": "hard"
+        "level": "hard",
+        "remark" : "Important"
       },
       {
         "title": "Total number spanning trees graph",
@@ -1536,7 +1540,8 @@
       {
         "title": "Travelling Salesman",
         "url": "https://www.geeksforgeeks.org/travelling-salesman-problem-set-1/",
-        "level": "hard"
+        "level": "hard",
+        "remark" : "Important"
       },
       {
         "title": "Find longest path directed acyclic graph ",

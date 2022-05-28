@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-screen flex flex-col items-center p-10">
-        <div className="title-container text-4xl">DSA 375</div>
+        <div className="title-container text-3xl">DSA 375</div>
         <div className="text-sm">By Aman & Shradha</div>
         <div className="cards-container mt-10 md:mt-12 flex flex-row flex-wrap justify-center gap-10">
           {questionData.map((topic, index) => {

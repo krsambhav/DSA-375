@@ -31,7 +31,12 @@ export default function Questions() {
       <div className="title-container text-3xl flex flex-row items-center justify-between w-[95vw]">
         <div className="icon"><Link href={'/'}><a><IoIosArrowRoundBack /></a></Link></div> <div className="title">{readyToShow && title}</div> <div><IoIosArrowRoundBack className="opacity-0" /></div>
       </div>
-      <div className="questions-container flex flex-row flex-wrap items-center justify-center gap-10 mt-10">
+      <div className="time-container mt-12 flex flex-row flex-wrap gap-5">
+        <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">5-10 mins</div>
+        <div className="time-box w-[80px] h-[30px] medium border-[.1px] border-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">15-20 mins</div>
+        <div className="time-box w-[80px] h-[30px] hard border-[.1px] border-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">45-60 mins</div>
+      </div>
+      <div className="questions-container flex flex-row flex-wrap items-center justify-center gap-10 mt-5">
       {readyToShow && questions['problems'].map((question:any, index:any) => {
         return (
           <QuestionCard key={index} title={question.title} url={question.url} level={question.level} remark={question.remark} />
