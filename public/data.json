@@ -261,48 +261,48 @@
       {
         "title": "Zigzag (or diagonal) Traversal of Matrix",
         "url": "https://www.geeksforgeeks.org/zigzag-or-diagonal-traversal-of-matrix/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Set Matrix Zeroes",
         "url": "https://leetcode.com/problems/set-matrix-zeroes/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Spiral Matrix",
         "url": "https://leetcode.com/problems/spiral-matrix/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Rotate Image",
         "url": "https://leetcode.com/problems/rotate-image/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Word Search",
         "url": "https://leetcode.com/problems/word-search/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Find the Number of Islands | Set 1 (Using DFS)",
         "url": "https://www.geeksforgeeks.org/find-number-of-islands/",
-        "level": "easy",
+        "level": "medium",
         "remark": "Read about DFS"
       },
       {
         "title": "Given a Matrix of ‘O’ and ‘X’, Replace ‘O’ with ‘X’ if Surrounded by ‘X’",
         "url": "https://www.geeksforgeeks.org/given-matrix-o-x-replace-o-x-surrounded-x/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Find a Common Element in all Rows of a Given Row-Wise Sorted Matrix",
         "url": "https://www.geeksforgeeks.org/find-common-element-rows-row-wise-sorted-matrix/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Create a Matrix with Alternating Rectangles of O and X",
         "url": "https://www.geeksforgeeks.org/create-a-matrix-with-alternating-rectangles-of-0-and-x/",
-        "level": "easy"
+        "level": "medium"
       },
       {
         "title": "Maximum Size Rectangle of all 1s",
