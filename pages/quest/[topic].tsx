@@ -32,7 +32,7 @@ export default function Questions() {
       <div className="questions-container flex flex-row flex-wrap items-center justify-center gap-10 mt-10">
       {readyToShow && questions['problems'].map((question:any, index:any) => {
         return (
-          <QuestionCard key={index} title={question.title} url={question.url} level={question.level} />
+          <QuestionCard key={index} title={question.title} url={question.url} level={question.level} remark={question.remark} />
         )
       })}
       </div>

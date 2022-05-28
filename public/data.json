@@ -16,7 +16,8 @@
       {
         "title": "Maximum-Subarray",
         "url": "https://leetcode.com/problems/maximum-subarray/",
-        "level": "easy"
+        "level": "easy",
+        "remark": "use Kadane's Algorithm"
       },
       {
         "title": "Contains Duplicate",
@@ -152,7 +153,8 @@
       {
         "title": "Valid parentheses",
         "url": "https://leetcode.com/problems/valid-parentheses/",
-        "level": "easy"
+        "level": "easy",
+        "remark": "use Stacks (if possible)"
       },
       {
         "title": "Remove Consecutive Characters",
@@ -247,7 +249,8 @@
       {
         "title": "Word Wrap",
         "url": "https://practice.geeksforgeeks.org/problems/word-wrap1646/1",
-        "level": "hard"
+        "level": "hard",
+        "remark": "use Dynaming Programming"
       }
     ]
   },
@@ -283,7 +286,8 @@
       {
         "title": "Find the Number of Islands | Set 1 (Using DFS)",
         "url": "https://www.geeksforgeeks.org/find-number-of-islands/",
-        "level": "easy"
+        "level": "easy",
+        "remark": "Read about DFS"
       },
       {
         "title": "Given a Matrix of ‘O’ and ‘X’, Replace ‘O’ with ‘X’ if Surrounded by ‘X’",
@@ -316,7 +320,11 @@
         "url": "https://www.geeksforgeeks.org/permute-two-arrays-sum-every-pair-greater-equal-k/",
         "level": "easy"
       },
-      { "title": "counting sort", "url": "https://www.geeksforgeeks.org/counting-sort/", "level": "easy" },
+      {
+        "title": "counting sort",
+        "url": "https://www.geeksforgeeks.org/counting-sort/",
+        "level": "easy"
+      },
       {
         "title": "find common elements three sorted arrays",
         "url": "https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/",
@@ -337,7 +345,11 @@
         "url": "https://www.geeksforgeeks.org/find-a-pair-with-the-given-difference/",
         "level": "easy"
       },
-      { "title": "majority element", "url": "https://www.geeksforgeeks.org/majority-element/", "level": "medium" },
+      {
+        "title": "majority element",
+        "url": "https://www.geeksforgeeks.org/majority-element/",
+        "level": "medium"
+      },
       {
         "title": "count triplets with sum smaller that a given value",
         "url": "https://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value/",
@@ -353,13 +365,21 @@
         "url": "https://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/",
         "level": "medium"
       },
-      { "title": "Inversion of Array", "url": "https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1", "level": "medium" },
+      {
+        "title": "Inversion of Array",
+        "url": "https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1",
+        "level": "medium"
+      },
       {
         "title": "Find Duplicates in O(n) Time and O(1) Extra Space ",
         "url": "https://www.geeksforgeeks.org/find-duplicates-in-on-time-and-constant-extra-space/",
         "level": "medium"
       },
-      { "title": "Radix Sort", "url": "https://www.geeksforgeeks.org/radix-sort/", "level": "medium" },
+      {
+        "title": "Radix Sort",
+        "url": "https://www.geeksforgeeks.org/radix-sort/",
+        "level": "medium"
+      },
       {
         "title": "Product of Array except itself",
         "url": "https://www.geeksforgeeks.org/a-product-array-puzzle/",
@@ -395,13 +415,172 @@
         "url": "https://www.geeksforgeeks.org/print-all-subarrays-with-0-sum/",
         "level": "hard"
       },
-      { "title": "Aggressive Cows", "url": "https://www.spoj.com/problems/AGGRCOW/", "level": "hard" },
+      {
+        "title": "Aggressive Cows",
+        "url": "https://www.spoj.com/problems/AGGRCOW/",
+        "level": "hard"
+      },
       {
         "title": "Allocate Minimum number of Pages",
         "url": "https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1",
         "level": "hard"
       },
-      { "title": "Minimum Swaps to Sort", "url": "https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/", "level": "hard" }
+      {
+        "title": "Minimum Swaps to Sort",
+        "url": "https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/",
+        "level": "hard"
+      }
+    ]
+  },
+  {
+    "topic": "binarytrees",
+    "title": "Binary Trees",
+    "problems": [
+      {
+        "title": "Maximum Depth of Binary Tree",
+        "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+        "level": "easy"
+      },
+      {
+        "title": "Reverse Level Order Traversal",
+        "url": "https://practice.geeksforgeeks.org/problems/reverse-level-order-traversal/1",
+        "level": "easy"
+      },
+      {
+        "title": "Subtree of Another Tree",
+        "url": "https://leetcode.com/problems/subtree-of-another-tree/",
+        "level": "easy"
+      },
+      { "title": "Invert Binary Tree", "url": "https://leetcode.com/problems/invert-binary-tree/", "level": "easy" },
+      {
+        "title": "Binary Tree Level Order Traversal",
+        "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+        "level": "easy"
+      },
+      {
+        "title": "Left View of Binary Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1",
+        "level": "easy"
+      },
+      {
+        "title": "Right View of Binary Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/right-view-of-binary-tree/1",
+        "level": "easy"
+      },
+      {
+        "title": "ZigZag Tree Traversal",
+        "url": "https://practice.geeksforgeeks.org/problems/zigzag-tree-traversal/1",
+        "level": "easy"
+      },
+      {
+        "title": "Create a mirror tree from the given binary tree",
+        "url": "https://www.geeksforgeeks.org/create-a-mirror-tree-from-the-given-binary-tree/",
+        "level": "easy"
+      },
+      { "title": "Leaf at same level", "url": "https://practice.geeksforgeeks.org/problems/leaf-at-same-level/1", "level": "easy" },
+      {
+        "title": "Check for Balanced Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/check-for-balanced-tree/1",
+        "level": "easy"
+      },
+      {
+        "title": "Transform to Sum Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/transform-to-sum-tree/1",
+        "level": "easy"
+      },
+      {
+        "title": "Check if Tree is Isomorphic ",
+        "url": "https://practice.geeksforgeeks.org/problems/check-if-tree-is-isomorphic/1",
+        "level": "easy"
+      },
+      { "title": "Same Tree", "url": "https://leetcode.com/problems/same-tree/", "level": "easy" },
+      {
+        "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+        "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+        "level": "medium"
+      },
+      {
+        "title": "Height of Binary Tree ",
+        "url": "https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1",
+        "level": "medium"
+      },
+      {
+        "title": "Diameter of a Binary Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1",
+        "level": "medium"
+      },
+      {
+        "title": "Top View of Binary Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1",
+        "level": "medium"
+      },
+      {
+        "title": "Bottom View of Binary Tree ",
+        "url": "https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1",
+        "level": "medium"
+      },
+      {
+        "title": "Diagonal Traversal of Binary Tree ",
+        "url": "https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/",
+        "level": "medium"
+      },
+      {
+        "title": "Boundary Traversal of binary tree",
+        "url": "https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
+        "level": "medium"
+      },
+      {
+        "title": "Construct Binary Tree from String with Brackets",
+        "url": "https://www.geeksforgeeks.org/construct-binary-tree-string-bracket-representation/",
+        "level": "medium"
+      },
+      {
+        "title": "Minimum swap required to convert binary tree to binary search tree",
+        "url": "https://www.geeksforgeeks.org/minimum-swap-required-convert-binary-tree-binary-search-tree/#:~:text=Given%20the%20array%20representation%20of,it%20into%20Binary%20Search%20Tree.&text=Swap%201%3A%20Swap%20node%208,node%209%20with%20node%2010.",
+        "level": "medium"
+      },
+      {
+        "title": "Duplicate subtree in Binary Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/duplicate-subtree-in-binary-tree/1",
+        "level": "medium"
+      },
+      {
+        "title": "Check if a given graph is tree or not",
+        "url": "https://www.geeksforgeeks.org/check-given-graph-tree/#:~:text=Since%20the%20graph%20is%20undirected,graph%20is%20connected%2C%20otherwise%20not.",
+        "level": "medium"
+      },
+      {
+        "title": "Lowest Common Ancestor in a Binary Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1",
+        "level": "medium"
+      },
+      {
+        "title": "Min distance between two given nodes of a Binary Tree",
+        "url": "https://practice.geeksforgeeks.org/problems/min-distance-between-two-given-nodes-of-a-binary-tree/1",
+        "level": "medium"
+      },
+      { "title": "Duplicate Subtrees", "url": "https://practice.geeksforgeeks.org/problems/duplicate-subtrees/1", "level": "medium" },
+      {
+        "title": "Kth ancestor of a node in binary tree",
+        "url": "https://www.geeksforgeeks.org/kth-ancestor-node-binary-tree-set-2/",
+        "level": "hard"
+      },
+      {
+        "title": "Binary Tree Maximum Path Sum",
+        "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+        "level": "hard"
+      },
+      {
+        "title": "Serialize and Deserialize Binary Tree",
+        "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+        "level": "hard"
+      },
+      { "title": "Binary Tree to DLL", "url": "https://practice.geeksforgeeks.org/problems/binary-tree-to-dll/1", "level": "hard" },
+      {
+        "title": "Print all k-sum paths in a binary tree",
+        "url": "https://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/",
+        "level": "hard"
+      }
     ]
   }
 ]
