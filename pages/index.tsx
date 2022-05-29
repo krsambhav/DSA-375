@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.css";
 import questionData from "../public/data.json";
 import { IoLogoGithub } from "react-icons/io";
 import ThemeChanger from "../components/ThemeChanger";
+import {SiGooglesheets} from 'react-icons/si';
 
 const Home: NextPage = () => {
   return (
@@ -41,6 +42,9 @@ const Home: NextPage = () => {
         >
           <IoLogoGithub className="text-2xl" />
         </a>
+        <a href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/htmlview?pru=AAABgROubJY*B_0WxnW4sJ84JG81Ih-eng#" target={'_blank'}>
+          <SiGooglesheets className="text-lg" />
+          </a>
       </footer>
     </div>
   );
