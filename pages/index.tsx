@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-screen flex flex-col items-center p-10 md:pb-24 min-h-screen">
+      <main className="w-screen flex flex-col items-center p-10 md:pb-24 min-h-screen select-none">
         <div className="title-container text-3xl">DSA 375</div>
         <a
           href="https://www.youtube.com/c/ApnaCollegeOfficial"
