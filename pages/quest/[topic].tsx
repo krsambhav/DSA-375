@@ -154,7 +154,7 @@ export default function Questions() {
         >
           <IoLogoGithub className="text-2xl" />
         </a>
-        <a href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/htmlview?pru=AAABgROubJY*B_0WxnW4sJ84JG81Ih-eng#" target={'_blank'}>
+        <a href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/htmlview?pru=AAABgROubJY*B_0WxnW4sJ84JG81Ih-eng#" target={'_blank'} rel="noreferrer">
           <SiGooglesheets className="text-lg" />
           </a>
       </footer>
