@@ -13,7 +13,7 @@ const ThemeChanger = () => {
    },[theme])
  
   return (
-    <div>
+    <div className='h-[30px] flex flex-col justify-center'>
       {readyToShow && <DarkModeSwitch
       style={{ width: '22px' }}
       checked={isDarkMode}
