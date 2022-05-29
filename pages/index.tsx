@@ -10,7 +10,7 @@ import { SiGooglesheets } from "react-icons/si";
 
 const Home: NextPage = () => {
   return (
-    <div className="dark:bg-slate-800">
+    <div className="dark:bg-slate-900">
       <Head>
         <title>DSA 375</title>
         <meta name="description" content="DSA 375" />
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-800">
+      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-900">
         <ThemeChanger />
         <a
           href="https://github.com/krsambhav/DSA-375/"

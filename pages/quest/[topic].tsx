@@ -91,7 +91,7 @@ export default function Questions() {
   useEffect(() => {}, [questions]);
 
   return (
-    <div className="dark:bg-slate-800">
+    <div className="dark:bg-slate-900">
       <Head>
         <title>{title}</title>
       </Head>
@@ -145,7 +145,7 @@ export default function Questions() {
             })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-800">
+      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-900">
         <ThemeChanger />
         <a
           href="https://github.com/krsambhav/DSA-375/"
