@@ -28,13 +28,13 @@ export default function QuestionCard({
       <div className="title text-center">{title}</div>
       <div className="title text-center text-xs">{remark}</div>
       <div className="action-btns mt-3 flex flex-row gap-5">
-        <div className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-200"  onClick={() => handleUpdateProgress(url, index)}>
-          {!done ? <MdDone/> : <MdClose />}
-        </div>
         <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-200">
           <a href={url} target="_blank" rel="noreferrer">
             <MdOutlineOpenInNew />
           </a>
+        </div>
+        <div className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-200"  onClick={() => handleUpdateProgress(url, index)}>
+          {!done ? <MdDone/> : <MdClose />}
         </div>
       </div>
     </div>
