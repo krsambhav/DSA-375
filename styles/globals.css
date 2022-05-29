@@ -24,41 +24,41 @@
 }
 
 .easy {
-  box-shadow: 4px 4px yellowgreen;
+  box-shadow: 4px 4px rgb(169, 242, 24);
 }
 
 .easy:hover {
-  background-color: yellowgreen;
+  background-color: rgb(169, 242, 24);
   border-color: transparent;
 }
 
 .medium {
-  box-shadow: 4px 4px orange;
+  box-shadow: 4px 4px rgb(255, 186, 58);
 }
 .medium:hover {
-  background-color: orange;
+  background-color: rgb(255, 186, 58);
   border-color: transparent;
 }
 
 .hard {
-  box-shadow: 4px 4px rgb(255, 62, 62);
+  box-shadow: 4px 4px rgb(255, 109, 109);
 }
 .hard:hover {
-  background-color: rgb(255, 62, 62);
+  background-color: rgb(255, 109, 109);
   border-color: transparent;
 }
 .easy-done{
-  background: yellowgreen;
+  background: rgb(169, 242, 24);
   box-shadow: none;
   border: transparent;
 }
 .medium-done{
-  background: orange;
+  background: rgb(255, 186, 58);
   box-shadow: none;
   border: transparent;
 }
 .hard-done{
-  background: rgb(255, 62, 62);
+  background: rgb(255, 109, 109);
   box-shadow: none;
   border: transparent;
 }
