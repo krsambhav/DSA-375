@@ -42,6 +42,7 @@ export default function Questions() {
     // setQuestions(questionData.filter((set) => set.topic === topic)[0]);
     // setTitle(questionData.filter((set) => set.topic === topic)[0]["title"]);
     if (localStorage.getItem("progressData") == null) {
+      localStorage.setItem("progressData", JSON.stringify(questionData));
       setQuestions(questionData.filter((set: any) => set.topic === topic)[0]);
       setTitle(
         questionData.filter((set: any) => set.topic === topic)[0]["title"]
@@ -76,11 +77,12 @@ export default function Questions() {
   const handleUpdateProgress = (url: string, questionIndex: number) => {
     // const topicIndex = questionData.indexOf(questions);
     let previousData = localStorage.getItem('progressData') !== null ? JSON.parse(localStorage.getItem('progressData') || "") : questionData;
+    console.log(previousData);
     // console.log(previousData[topicIndex[topic]]);
     let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
     tempData = { ...tempData, done: !tempData.done };
     previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
-    console.log(previousData);
+    // console.log(previousData);
     localStorage.setItem("progressData", JSON.stringify(previousData));
     setQuestions(previousData[topicIndex[topic]]);
   };
