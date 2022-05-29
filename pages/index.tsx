@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import styles from "../styles/Home.module.css";
 import questionData from "../public/data.json";
 import { IoLogoGithub } from "react-icons/io";
+import ThemeChanger from "../components/ThemeChanger";
 
 const Home: NextPage = () => {
   return (
@@ -31,9 +32,16 @@ const Home: NextPage = () => {
           })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row justify-center my-10">
-      <a href="https://github.com/krsambhav/DSA-375/" target={"_blank"} rel="noreferrer"><IoLogoGithub className="text-2xl" /></a>
-    </footer>
+      <footer className="w-screen flex flow-row justify-center my-10 items-center gap-10">
+        <ThemeChanger />
+        <a
+          href="https://github.com/krsambhav/DSA-375/"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <IoLogoGithub className="text-2xl" />
+        </a>
+      </footer>
     </div>
   );
 };

@@ -5,9 +5,12 @@ import QuestionCard from "../../components/QuestionCard";
 import questionData from '../../public/data.json';
 import {IoIosArrowRoundBack, IoLogoGithub} from 'react-icons/io';
 import Link from "next/link";
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import ThemeChanger from "../../components/ThemeChanger";
 
 export default function Questions() {
   const [questions, setQuestions] = useState<any>();
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
   const [readyToShow, setReadyToShow] = useState<boolean>(false);
   const router = useRouter();
@@ -23,6 +26,10 @@ export default function Questions() {
     setTitle(questionData.filter((set) => set.topic===topic)[0]['title']);
     setReadyToShow(true);
   }, [topic, router.isReady])
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  }
   
   return (
     <>
@@ -44,7 +51,8 @@ export default function Questions() {
       })}
       </div>
     </main>
-    <footer className="w-screen flex flow-row justify-center my-10">
+    <footer className="w-screen flex flow-row items-center justify-center my-10 gap-10">
+    <ThemeChanger />
       <a href="https://github.com/krsambhav/DSA-375/" target={"_blank"} rel="noreferrer"><IoLogoGithub className="text-2xl" /></a>
     </footer>
     </>
