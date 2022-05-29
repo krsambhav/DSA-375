@@ -36,7 +36,7 @@ export default function Questions() {
       <Head>
         <title>{title}</title>
       </Head>
-      <main className="w-screen p-10 flex flex-col items-center min-h-screen pb-16">
+      <main className="w-screen p-10 flex flex-col items-center min-h-screen md:pb-24">
         <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw]">
           <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 ">
             <Link href={"/"}>
@@ -51,13 +51,13 @@ export default function Questions() {
           </div>
         </div>
         <div className="time-container mt-12 flex flex-row flex-wrap gap-5">
-          <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             5-10 mins
           </div>
-          <div className="time-box w-[80px] h-[30px] medium border-[.1px] border-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] medium border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             15-20 mins
           </div>
-          <div className="time-box w-[80px] h-[30px] hard border-[.1px] border-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] hard border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             45-60 mins
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function Questions() {
             })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 dark:bg-slate-800">
+      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-800">
         <ThemeChanger />
         <a
           href="https://github.com/krsambhav/DSA-375/"
