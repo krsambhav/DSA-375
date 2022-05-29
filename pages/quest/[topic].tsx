@@ -36,7 +36,7 @@ export default function Questions() {
       <Head>
         <title>{title}</title>
       </Head>
-      <main className="w-screen p-10 flex flex-col items-center">
+      <main className="w-screen p-10 flex flex-col items-center min-h-screen pb-16">
         <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw]">
           <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 ">
             <Link href={"/"}>
@@ -76,7 +76,7 @@ export default function Questions() {
             })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row items-center justify-center py-10 gap-10">
+      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 dark:bg-slate-800">
         <ThemeChanger />
         <a
           href="https://github.com/krsambhav/DSA-375/"

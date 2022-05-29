@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-screen flex flex-col items-center p-10">
+      <main className="w-screen flex flex-col items-center p-10 min-h-screen">
         <div className="title-container text-3xl">DSA 375</div>
         <div className="text-sm">By Aman & Shradha</div>
         <div className="cards-container mt-10 md:mt-12 flex flex-row flex-wrap justify-center gap-10">
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row justify-center py-10 items-center gap-10">
+      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 dark:bg-slate-800">
         <ThemeChanger />
         <a
           href="https://github.com/krsambhav/DSA-375/"

@@ -13,6 +13,10 @@
   text-transform: capitalize;
 }
 
+.dark .normalcard{
+  box-shadow: 4px 4px white;
+}
+
 .card:hover {
   box-shadow: none;
   background-color: black;
