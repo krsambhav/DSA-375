@@ -47,3 +47,18 @@
   background-color: rgb(255, 62, 62);
   border-color: transparent;
 }
+.easy-done{
+  background: yellowgreen;
+  box-shadow: none;
+  border: transparent;
+}
+.medium-done{
+  background: orange;
+  box-shadow: none;
+  border: transparent;
+}
+.hard-done{
+  background: rgb(255, 62, 62);
+  box-shadow: none;
+  border: transparent;
+}

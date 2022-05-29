@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import QuestionCard from "../../components/QuestionCard";
 import questionData from "../../public/data.json";
 import { IoIosArrowRoundBack, IoLogoGithub } from "react-icons/io";
+import { FaRandom } from "react-icons/fa";
 import Link from "next/link";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import ThemeChanger from "../../components/ThemeChanger";
@@ -13,23 +14,78 @@ export default function Questions() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
   const [readyToShow, setReadyToShow] = useState<boolean>(false);
+  const [randomURL, setRandomURL] = useState<string>("");
   const router = useRouter();
-  const topic = router.query["topic"] || "Questions";
-  const topicIndex = {
+  const topic: any = router.query["topic"] || "Questions";
+  const topicIndex: any = {
     arrays: 0,
+    strings: 1,
+    "2darrays": 2,
+    searchingandsorting: 3,
+    binarytrees: 4,
+    backtracking: 5,
+    linkedlist: 6,
+    stacksandqueues: 7,
+    greedy: 8,
+    binarysearchtrees: 9,
+    heapsandhashing: 10,
+    graphs: 11,
+    tries: 12,
+    dp: 13,
+    bitmanipulation: 14,
+    segmenttrees: 15,
   };
   // console.log(topic);
   useEffect(() => {
-    setQuestions(questionData);
+    // setQuestions(questionData);
     if (!router.isReady) return;
-    setQuestions(questionData.filter((set) => set.topic === topic)[0]);
-    setTitle(questionData.filter((set) => set.topic === topic)[0]["title"]);
+    // setQuestions(questionData.filter((set) => set.topic === topic)[0]);
+    // setTitle(questionData.filter((set) => set.topic === topic)[0]["title"]);
+    if (localStorage.getItem("progressData") == null) {
+      setQuestions(questionData.filter((set: any) => set.topic === topic)[0]);
+      setTitle(
+        questionData.filter((set: any) => set.topic === topic)[0]["title"]
+      );
+    } else {
+      const localQuestionData = JSON.parse(
+        localStorage.getItem("progressData") || ""
+      );
+      setQuestions(
+        localQuestionData.filter((set: any) => set.topic === topic)[0]
+      );
+      setTitle(
+        localQuestionData.filter((set: any) => set.topic === topic)[0]["title"]
+      );
+    }
+    // console.log(localQuestionData);
+
     setReadyToShow(true);
   }, [topic, router.isReady]);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+  useEffect(() => {
+    if (!questions) return;
+    const randomNum = Math.floor(Math.random() * questions.problems.length);
+    setRandomURL(questions.problems[randomNum].url);
+  }, [questions]);
+
+  const setRandom = () => {
+    const randomNum = Math.floor(Math.random() * questions.problems.length);
+    setRandomURL(questions.problems[randomNum].url);
   };
+
+  const handleUpdateProgress = (url: string, questionIndex: number) => {
+    // const topicIndex = questionData.indexOf(questions);
+    let previousData = localStorage.getItem('progressData') !== null ? JSON.parse(localStorage.getItem('progressData') || "") : questionData;
+    // console.log(previousData[topicIndex[topic]]);
+    let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
+    tempData = { ...tempData, done: !tempData.done };
+    previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
+    console.log(previousData);
+    localStorage.setItem("progressData", JSON.stringify(previousData));
+    setQuestions(previousData[topicIndex[topic]]);
+  };
+
+  useEffect(() => {}, [questions]);
 
   return (
     <div className="dark:bg-slate-800">
@@ -46,11 +102,18 @@ export default function Questions() {
             </Link>
           </div>{" "}
           <div className="title">{readyToShow && title}</div>{" "}
-          <div className="md:fixed">
-            <IoIosArrowRoundBack className="opacity-0" />
-          </div>
+          <a
+            href={randomURL}
+            target="_blank"
+            rel="noreferrer"
+            onClick={setRandom}
+          >
+            <div className="icon md:fixed md:right-10 rounded-full border border-transparent dark:text-white transition-all duration-300 text-lg hover:bg-black p-2 hover:text-white">
+              <FaRandom />
+            </div>
+          </a>
         </div>
-        <div className="time-container mt-12 flex flex-row flex-wrap gap-5">
+        <div className="time-container mt-12 mb-6 flex flex-row flex-wrap gap-5">
           <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             5-10 mins
           </div>
@@ -67,10 +130,13 @@ export default function Questions() {
               return (
                 <QuestionCard
                   key={index}
+                  index={index}
                   title={question.title}
                   url={question.url}
                   level={question.level}
                   remark={question.remark}
+                  done={question.done}
+                  handleUpdateProgress={handleUpdateProgress}
                 />
               );
             })}
