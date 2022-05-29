@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { TiTick } from "react-icons/ti";
-import { MdOutlineOpenInNew, MdDone } from "react-icons/md";
+import { MdOutlineOpenInNew, MdDone, MdClose } from "react-icons/md";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 export default function QuestionCard({
   title,
@@ -28,7 +29,7 @@ export default function QuestionCard({
       <div className="title text-center text-xs">{remark}</div>
       <div className="action-btns mt-3 flex flex-row gap-5">
         <div className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-200"  onClick={() => handleUpdateProgress(url, index)}>
-          <MdDone/>
+          {!done ? <MdDone/> : <MdClose />}
         </div>
         <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-200">
           <a href={url} target="_blank" rel="noreferrer">
