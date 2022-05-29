@@ -145,7 +145,7 @@ export default function Questions() {
             })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-900">
+      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-900 pb-10 md:pb-0">
         <ThemeChanger />
         <a
           href="https://github.com/krsambhav/DSA-375/"
