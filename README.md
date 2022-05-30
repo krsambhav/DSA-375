@@ -1,6 +1,6 @@
 # DSA 375
 
-![](.gitres/cover.png)
+![](.gitres/banner.png)
 
 
 ## Credits
