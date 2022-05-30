@@ -120,7 +120,7 @@ export default function Questions() {
       </Head>
       <main className="w-screen p-10 flex flex-col items-center min-h-screen md:pb-24">
         <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw]">
-          <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 ">
+          <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 dark:hover:bg-white dark:hover:text-black">
             <Link href={"/"}>
               <a>
                 <IoIosArrowRoundBack />
@@ -134,19 +134,19 @@ export default function Questions() {
             rel="noreferrer"
             onClick={setRandom}
           >
-            <div className="icon md:fixed md:right-10 rounded-full border border-transparent dark:text-white transition-all duration-300 text-lg hover:bg-black p-2 hover:text-white">
+            <div className="icon md:fixed md:right-10 rounded-full border border-transparent dark:text-white transition-all duration-300 text-lg hover:bg-black p-2 hover:text-white dark:hover:bg-white dark:hover:text-black">
               <FaRandom />
             </div>
           </a>
         </div>
         <div className="time-container mt-12 mb-6 flex flex-row flex-wrap gap-5">
-          <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs hover:text-black">
             5-10 mins
           </div>
-          <div className="time-box w-[80px] h-[30px] medium border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] medium border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             15-20 mins
           </div>
-          <div className="time-box w-[80px] h-[30px] hard border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] hard border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             45-60 mins
           </div>
         </div>

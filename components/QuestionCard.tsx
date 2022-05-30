@@ -85,9 +85,12 @@ export default function QuestionCard({
             autoFocus
             name=""
             id=""
-            className="z-20 h-[70vh] w-[90vw] text-black border border-black outline-none p-2 font-mono text-base resize-none dark:text-white dark:border-white dark:border-[.1px]"
+            className="z-20 h-[70vh] w-[90vw] text-black border border-black outline-none p-2 font-mono text-base resize-none dark:text-white dark:border-white dark:border-[.1px] dark:bg-black"
             onChange={(e) => setNotesData(e.target.value)}
             value={notesData}
+            placeholder="Type your notes here..."
+            autoComplete="off"
+            autoCapitalize="off"
           ></textarea>
         </div>
       )}
