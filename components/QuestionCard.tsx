@@ -39,11 +39,11 @@ export default function QuestionCard({
 
   return (
     <div
-      className={`border-[0.1px] border-black dark:border-white hover:text-black dark:hover:border-transparent w-[90vw] md:w-[300px] h-[150px] flex flex-col justify-center items-center card transition-all duration-200 text-lg p-3 ${level} ${
+      className={`border-[0.1px] border-black dark:border-white hover:text-black dark:hover:border-transparent w-[90vw] md:w-[300px] h-[150px] flex flex-col justify-between items-center card transition-all duration-200 text-lg px-3 py-5 ${level} ${
         done && level + "-done text-black"
       } select-none`}
     >
-      <div className="title text-center">{title}</div>
+      <div className="title text-center text-base">{title}</div>
       <div className="title text-center text-xs">{remark}</div>
       <div className="action-btns mt-3 flex flex-row gap-5">
         <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-200 dark:transition-none">
