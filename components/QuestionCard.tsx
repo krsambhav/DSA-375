@@ -46,11 +46,11 @@ export default function QuestionCard({
       <div className="title text-center text-base">{title}</div>
       <div className="title text-center text-xs">{remark}</div>
       <div className="action-btns mt-3 flex flex-row gap-5">
-        <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-150 ">
           <a href={url} target="_blank" rel="noreferrer">
+        <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-150 ">
             <MdOutlineOpenInNew />
-          </a>
         </div>
+          </a>
         <div
           className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-150 "
           onClick={() => handleUpdateProgress(url, index)}
