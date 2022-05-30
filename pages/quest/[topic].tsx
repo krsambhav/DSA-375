@@ -77,11 +77,34 @@ export default function Questions() {
 
   const handleUpdateProgress = (url: string, questionIndex: number) => {
     // const topicIndex = questionData.indexOf(questions);
-    let previousData = localStorage.getItem('progressData') !== null ? JSON.parse(localStorage.getItem('progressData') || "") : questionData;
+    let previousData =
+      localStorage.getItem("progressData") !== null
+        ? JSON.parse(localStorage.getItem("progressData") || "")
+        : questionData;
     console.log(previousData);
     // console.log(previousData[topicIndex[topic]]);
     let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
     tempData = { ...tempData, done: !tempData.done };
+    previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
+    // console.log(previousData);
+    localStorage.setItem("progressData", JSON.stringify(previousData));
+    setQuestions(previousData[topicIndex[topic]]);
+  };
+
+  const handleNotesEdit = (
+    notes: string,
+    url: string,
+    questionIndex: number
+  ) => {
+    if(notes === "") return
+    let previousData =
+      localStorage.getItem("progressData") !== null
+        ? JSON.parse(localStorage.getItem("progressData") || "")
+        : questionData;
+    console.log(previousData);
+    // console.log(previousData[topicIndex[topic]]);
+    let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
+    tempData = { ...tempData, notes:notes };
     previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
     // console.log(previousData);
     localStorage.setItem("progressData", JSON.stringify(previousData));
@@ -139,7 +162,9 @@ export default function Questions() {
                   level={question.level}
                   remark={question.remark}
                   done={question.done}
+                  notes={question.notes}
                   handleUpdateProgress={handleUpdateProgress}
+                  handleNotesEdit={handleNotesEdit}
                 />
               );
             })}
@@ -154,9 +179,13 @@ export default function Questions() {
         >
           <IoLogoGithub className="text-2xl" />
         </a>
-        <a href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/htmlview?pru=AAABgROubJY*B_0WxnW4sJ84JG81Ih-eng#" target={'_blank'} rel="noreferrer">
+        <a
+          href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/htmlview?pru=AAABgROubJY*B_0WxnW4sJ84JG81Ih-eng#"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <SiGooglesheets className="text-lg" />
-          </a>
+        </a>
       </footer>
     </div>
   );
