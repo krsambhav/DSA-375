@@ -96,7 +96,7 @@ export default function Questions() {
     url: string,
     questionIndex: number
   ) => {
-    if(notes === "") return
+    if (notes === "") return;
     let previousData =
       localStorage.getItem("progressData") !== null
         ? JSON.parse(localStorage.getItem("progressData") || "")
@@ -104,7 +104,7 @@ export default function Questions() {
     console.log(previousData);
     // console.log(previousData[topicIndex[topic]]);
     let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
-    tempData = { ...tempData, notes:notes };
+    tempData = { ...tempData, notes: notes };
     previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
     // console.log(previousData);
     localStorage.setItem("progressData", JSON.stringify(previousData));
@@ -140,13 +140,13 @@ export default function Questions() {
           </a>
         </div>
         <div className="time-container mt-12 mb-6 flex flex-row flex-wrap gap-5">
-          <div className="time-box w-[80px] h-[30px] easy border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs hover:text-black">
+          <div className="time-box w-[80px] h-[30px] easy-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             5-10 mins
           </div>
-          <div className="time-box w-[80px] h-[30px] medium border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black hover:text-black transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] medium-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             15-20 mins
           </div>
-          <div className="time-box w-[80px] h-[30px] hard border-[.1px] border-black dark:border-white dark:hover:border-transparent dark:hover:text-black  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+          <div className="time-box w-[80px] h-[30px] hard-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
             45-60 mins
           </div>
         </div>

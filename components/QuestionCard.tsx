@@ -39,8 +39,8 @@ export default function QuestionCard({
 
   return (
     <div
-      className={`border-[0.1px] border-black dark:border-white hover:text-black dark:hover:border-transparent w-[90vw] md:w-[300px] h-[150px] flex flex-col justify-between items-center card transition-all duration-200 text-lg px-3 py-5 ${level} ${
-        done && level + "-done text-black"
+      className={`border-[0.1px] border-black dark:border-white dark:hover:border-transparent w-[90vw] md:w-[300px] h-[150px] flex flex-col justify-between items-center card transition-all duration-200 text-lg px-3 py-5 ${level} ${
+        done && level + "-done text-black hover:dark:text-black"
       } select-none`}
     >
       <div className="title text-center text-base">{title}</div>

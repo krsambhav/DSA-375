@@ -13,14 +13,8 @@
   text-transform: capitalize;
 }
 
-.dark .normalcard{
+.dark .normalcard {
   box-shadow: 4px 4px rgb(255, 222, 180);
-}
-
-.card:hover {
-  box-shadow: none;
-  background-color: black;
-  color: white;
 }
 
 .easy {
@@ -28,15 +22,16 @@
 }
 
 .easy:hover {
-  background-color: rgb(169, 242, 24);
-  border-color: transparent;
+  box-shadow: none;
+  /* background-color: black; */
+  box-shadow: 0px 0px 5px rgb(169, 242, 24);
 }
 
 .medium {
   box-shadow: 4px 4px rgb(255, 186, 58);
 }
 .medium:hover {
-  background-color: rgb(255, 186, 58);
+  box-shadow: 0px 0px 5px rgb(255, 186, 58);
   border-color: transparent;
 }
 
@@ -44,21 +39,31 @@
   box-shadow: 4px 4px rgb(255, 109, 109);
 }
 .hard:hover {
-  background-color: rgb(255, 109, 109);
+  box-shadow: 0px 0px 5px rgb(255, 109, 109);
   border-color: transparent;
 }
-.easy-done{
+
+.easy-done {
   background: rgb(169, 242, 24);
   box-shadow: none;
   border: transparent;
 }
-.medium-done{
+.medium-done {
   background: rgb(255, 186, 58);
   box-shadow: none;
   border: transparent;
 }
-.hard-done{
+.hard-done {
   background: rgb(255, 109, 109);
   box-shadow: none;
   border: transparent;
+}
+.easy-nohover {
+  box-shadow: 4px 4px rgb(169, 242, 24);
+}
+.medium-nohover {
+  box-shadow: 4px 4px rgb(255, 186, 58);
+}
+.hard-nohover {
+  box-shadow: 4px 4px rgb(255, 109, 109);
 }
