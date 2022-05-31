@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           target={"_blank"}
           rel='noreferrer'
         >
-          <div className="text-sm">By Aman & Shradha</div>
+          <div className="text-sm border-b px-[1px] py-[1px] border-black">By Apna College</div>
         </a>
         <div className="cards-container mt-10 md:mt-12 flex flex-row flex-wrap justify-center gap-10">
           {questionData.map((topic, index) => {

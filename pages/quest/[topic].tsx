@@ -116,7 +116,7 @@ export default function Questions() {
   useEffect(() => {}, [questions]);
 
   return (
-    <div className="transition-all duration-300 bg-white dark:bg-slate-900">
+    <div className="transition-all duration-300 bg-white text-black dark:bg-slate-900 dark:text-white">
       <Head>
         <title>{title}</title>
       </Head>
@@ -141,7 +141,7 @@ export default function Questions() {
             </div>
           </a>
         </div>
-        <div className="time-container mt-12 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
+        <div className="time-container mt-8 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
           <div className="time-container flex flex-row flex-wrap gap-5 items-center justify-center">
             <div className="time-box w-[80px] h-[30px] easy-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
               5-10 mins
