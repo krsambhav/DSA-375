@@ -153,7 +153,7 @@ export default function Questions() {
             </div>
           </div>
           <div className="disclaimer font-thin text-center text-xs md:text-sm select-none">
-            If you're a beginner, you can ignore this and follow at your own pace.
+            If you are a beginner, you can ignore this and follow at your own pace.
           </div>
         </div>
         <div className="questions-container flex flex-row flex-wrap items-center justify-center gap-10 mt-5 md:mx-16">
