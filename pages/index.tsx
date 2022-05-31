@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Card from "../components/Card";
+import Card from "../components/TopicCard";
 import styles from "../styles/Home.module.css";
 import questionData from "../public/data.json";
 import { IoLogoGithub } from "react-icons/io";
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-screen flex flex-col items-center p-10 md:pb-24 min-h-screen select-none">
+      <main className="w-screen flex flex-col items-center p-10 md:px-24 min-h-screen select-none">
         <div className="title-container text-3xl">DSA 375</div>
         <a
           href="https://www.youtube.com/c/ApnaCollegeOfficial"
@@ -35,6 +35,7 @@ const Home: NextPage = () => {
                 title={topic.title}
                 key={index}
                 qty={topic.problems.length}
+                index={index}
               />
             );
           })}
