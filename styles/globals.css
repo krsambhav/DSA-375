@@ -13,6 +13,20 @@
   text-transform: capitalize;
 }
 
+.topic-card {
+  box-shadow: 4px 4px black;
+  text-transform: capitalize;
+}
+.dark .topic-card {
+  box-shadow: 4px 4px rgb(255, 222, 180);
+}
+.topic-card:hover {
+  box-shadow: none;
+}
+.dark .topic-card:hover {
+  box-shadow: none;
+}
+
 .dark .normalcard {
   box-shadow: 4px 4px rgb(255, 222, 180);
 }
