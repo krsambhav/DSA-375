@@ -7,6 +7,7 @@ import questionData from "../public/data.json";
 import { IoLogoGithub } from "react-icons/io";
 import ThemeChanger from "../components/ThemeChanger";
 import { SiGooglesheets } from "react-icons/si";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -39,23 +40,7 @@ const Home: NextPage = () => {
           })}
         </div>
       </main>
-      <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-900  pb-10 md:pb-0">
-        <ThemeChanger />
-        <a
-          href="https://github.com/krsambhav/DSA-375/"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          <IoLogoGithub className="text-2xl" />
-        </a>
-        <a
-          href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/htmlview?pru=AAABgROubJY*B_0WxnW4sJ84JG81Ih-eng#"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          <SiGooglesheets className="text-lg" />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 };
