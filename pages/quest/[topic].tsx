@@ -129,7 +129,7 @@ export default function Questions() {
               </a>
             </Link>
           </div>{" "}
-          <div className="title">{readyToShow && title}</div>{" "}
+          <div className="title select-none">{readyToShow && title}</div>{" "}
           <a
             href={randomURL}
             target="_blank"

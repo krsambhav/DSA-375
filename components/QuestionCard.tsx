@@ -42,16 +42,16 @@ export default function QuestionCard({
     <div
       className={`border-[0.1px] border-black dark:border-white dark:hover:border-transparent w-[90vw] md:w-[300px] h-[150px] flex flex-col justify-between items-center card duration-200 text-lg px-3 py-5 ${level} ${
         done && level + "-done text-black hover:dark:text-black"
-      } select-none ${done === true ? 'transition-all' : 'transition-shadow'}`}
+      } select-none ${done === true ? "transition-all" : "transition-shadow"}`}
     >
       <div className="title text-center text-base">{title}</div>
       <div className="title text-center text-xs">{remark}</div>
       <div className="action-btns mt-3 flex flex-row gap-5">
-          <a href={url} target="_blank" rel="noreferrer">
-        <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full hover:transition-all duration-150 dark:hover:bg-white dark:hover:text-black">
+        <a href={url} target="_blank" rel="noreferrer">
+          <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full hover:transition-all duration-150 dark:hover:bg-white dark:hover:text-black">
             <MdOutlineOpenInNew />
-        </div>
-          </a>
+          </div>
+        </a>
         <div
           className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full hover:transition-all duration-150 dark:hover:bg-white dark:hover:text-black"
           onClick={() => handleUpdateProgress(url, index)}
@@ -62,7 +62,11 @@ export default function QuestionCard({
           className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full hover:transition-all duration-150 dark:hover:bg-white dark:hover:text-black"
           onClick={() => handleNotesToggle()}
         >
-          {notesData && notesData.trim().length > 0 ? <TbNotes className="cursor-pointer" /> : <TbNotesOff className="cursor-pointer" />}
+          {notesData && notesData.trim().length > 0 ? (
+            <TbNotes className="cursor-pointer" />
+          ) : (
+            <TbNotesOff className="cursor-pointer" />
+          )}
         </div>
       </div>
       {showNotes && (
@@ -70,6 +74,12 @@ export default function QuestionCard({
           className="notes-container fixed top-0 left-0 w-screen h-screen flex flex-col justify-start pt-10 items-center backdrop-blur-xl"
           onKeyDown={(e) => {
             if (e.key === "Escape") {
+              handleNotesEdit(notesData, url, index);
+              setShowNotes(false);
+            }
+          }}
+          onClick={(e: any) => {
+            if (e.target.nodeName === "DIV") {
               handleNotesEdit(notesData, url, index);
               setShowNotes(false);
             }
