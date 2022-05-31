@@ -8,7 +8,8 @@ import { FaRandom } from "react-icons/fa";
 import Link from "next/link";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import ThemeChanger from "../../components/ThemeChanger";
-import { SiGooglesheets } from "react-icons/si";
+import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
+import { VscGithubAlt } from "react-icons/vsc";
 
 export default function Questions() {
   const [questions, setQuestions] = useState<any>();
@@ -139,15 +140,20 @@ export default function Questions() {
             </div>
           </a>
         </div>
-        <div className="time-container mt-12 mb-6 flex flex-row flex-wrap gap-5">
-          <div className="time-box w-[80px] h-[30px] easy-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
-            5-10 mins
+        <div className="time-container mt-12 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
+          <div className="time-container flex flex-row flex-wrap gap-5 items-center justify-center">
+            <div className="time-box w-[80px] h-[30px] easy-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+              5-10 mins
+            </div>
+            <div className="time-box w-[80px] h-[30px] medium-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+              15-20 mins
+            </div>
+            <div className="time-box w-[80px] h-[30px] hard-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
+              45-60 mins
+            </div>
           </div>
-          <div className="time-box w-[80px] h-[30px] medium-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
-            15-20 mins
-          </div>
-          <div className="time-box w-[80px] h-[30px] hard-nohover border-[.1px] border-black dark:border-white  transition-all duration-200 flex flex-col justify-center items-center card select-none text-xs">
-            45-60 mins
+          <div className="disclaimer font-thin text-center text-xs md:text-sm select-none">
+            If you're a beginner, you can ignore this and follow at your own pace.
           </div>
         </div>
         <div className="questions-container flex flex-row flex-wrap items-center justify-center gap-10 mt-5 md:mx-16">
@@ -171,20 +177,20 @@ export default function Questions() {
         </div>
       </main>
       <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 bg-white dark:bg-slate-900 pb-10 md:pb-0">
-        <ThemeChanger />
         <a
           href="https://github.com/krsambhav/DSA-375/"
           target={"_blank"}
           rel="noreferrer"
         >
-          <IoLogoGithub className="text-2xl" />
+          <VscGithubAlt className="text-xl" />
         </a>
+        <ThemeChanger />
         <a
           href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/htmlview?pru=AAABgROubJY*B_0WxnW4sJ84JG81Ih-eng#"
           target={"_blank"}
           rel="noreferrer"
         >
-          <SiGooglesheets className="text-lg" />
+          <BsFileEarmarkSpreadsheet className="text-lg" />
         </a>
       </footer>
     </div>
