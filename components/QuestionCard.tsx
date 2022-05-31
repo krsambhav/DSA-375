@@ -4,6 +4,7 @@ import { MdOutlineOpenInNew, MdDone, MdClose } from "react-icons/md";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { CgNotes } from "react-icons/cg";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import { TbNotes, TbNotesOff } from "react-icons/tb";
 import { useEffect, useState } from "react";
 
 export default function QuestionCard({
@@ -39,29 +40,29 @@ export default function QuestionCard({
 
   return (
     <div
-      className={`border-[0.1px] border-black dark:border-white dark:hover:border-transparent w-[90vw] md:w-[300px] h-[150px] flex flex-col justify-between items-center card transition-all duration-200 text-lg px-3 py-5 ${level} ${
+      className={`border-[0.1px] border-black dark:border-white dark:hover:border-transparent w-[90vw] md:w-[300px] h-[150px] flex flex-col justify-between items-center card duration-200 text-lg px-3 py-5 ${level} ${
         done && level + "-done text-black hover:dark:text-black"
-      } select-none`}
+      } select-none ${done === true ? 'transition-all' : 'transition-shadow'}`}
     >
       <div className="title text-center text-base">{title}</div>
       <div className="title text-center text-xs">{remark}</div>
       <div className="action-btns mt-3 flex flex-row gap-5">
           <a href={url} target="_blank" rel="noreferrer">
-        <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-150 ">
+        <div className="open-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full hover:transition-all duration-150 dark:hover:bg-white dark:hover:text-black">
             <MdOutlineOpenInNew />
         </div>
           </a>
         <div
-          className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-150 "
+          className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full hover:transition-all duration-150 dark:hover:bg-white dark:hover:text-black"
           onClick={() => handleUpdateProgress(url, index)}
         >
           {!done ? <MdDone /> : <MdClose />}
         </div>
         <div
-          className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full transition-all duration-150 "
+          className="done-icon p-2 hover:bg-black hover:text-white cursor-pointer rounded-full hover:transition-all duration-150 dark:hover:bg-white dark:hover:text-black"
           onClick={() => handleNotesToggle()}
         >
-          <CgNotes className="cursor-pointer" />
+          {notesData && notesData.trim().length > 0 ? <TbNotes className="cursor-pointer" /> : <TbNotesOff className="cursor-pointer" />}
         </div>
       </div>
       {showNotes && (

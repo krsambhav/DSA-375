@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
-    <div className="dark:bg-slate-900">
+    <div className="transition-all duration-300 bg-white dark:bg-slate-900">
       <Head>
         <title>DSA 375</title>
         <meta name="description" content="DSA 375" />
