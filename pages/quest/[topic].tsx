@@ -205,7 +205,7 @@ export default function Questions() {
             })}
         </div>
         {isVisible && (
-          <div className="cursor-pointer go-to-top-btn dark:bg-black fixed right-10 bottom-20 text-2xl dark:text-white rounded-full" onClick={scrollToTop}>
+          <div className="cursor-pointer go-to-top-btn text-white bg-slate-900 border-[1px] border-black hover:bg-white hover:text-slate-900 dark:bg-white fixed right-10 bottom-20 text-2xl dark:text-slate-900 dark:hover:text-white dark:hover:bg-slate-900 dark:border-white rounded-full transition-colors duration-200" onClick={scrollToTop}>
             <BsArrowUpCircleFill />
           </div>
         )}
