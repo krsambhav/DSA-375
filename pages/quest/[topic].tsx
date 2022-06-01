@@ -8,7 +8,7 @@ import { FaRandom } from "react-icons/fa";
 import Link from "next/link";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import ThemeChanger from "../../components/ThemeChanger";
-import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
+import { BsArrowUpCircleFill, BsFileEarmarkSpreadsheet } from "react-icons/bs";
 import { VscGithubAlt } from "react-icons/vsc";
 import Footer from "../../components/Footer";
 
@@ -18,6 +18,7 @@ export default function Questions() {
   const [title, setTitle] = useState<string>("");
   const [readyToShow, setReadyToShow] = useState<boolean>(false);
   const [randomURL, setRandomURL] = useState<string>("");
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const router = useRouter();
   const topic: any = router.query["topic"] || "Questions";
   const topicIndex: any = {
@@ -115,6 +116,32 @@ export default function Questions() {
 
   useEffect(() => {}, [questions]);
 
+  const listenToScroll = () => {
+    let heightToHideFrom = 500;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+        setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
+
   return (
     <div className="transition-all duration-300 bg-white text-black dark:bg-slate-900 dark:text-white">
       <Head>
@@ -177,6 +204,11 @@ export default function Questions() {
               );
             })}
         </div>
+        {isVisible && (
+          <div className="cursor-pointer go-to-top-btn dark:bg-black fixed right-10 bottom-20 text-2xl dark:text-white rounded-full" onClick={scrollToTop}>
+            <BsArrowUpCircleFill />
+          </div>
+        )}
       </main>
       <Footer />
     </div>
