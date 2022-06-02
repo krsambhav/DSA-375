@@ -4,7 +4,7 @@ import ThemeChanger from "./ThemeChanger";
 
 export default function Footer () {
   return (
-    <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 transition-all duration-300 bg-white dark:bg-slate-900 pb-10 md:pb-0">
+    <footer className="mt-10 md:mt-0 w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 transition-all duration-300 bg-white dark:bg-slate-900 pb-10 md:pb-0">
         <a
           href="https://github.com/krsambhav/DSA-375/"
           target={"_blank"}

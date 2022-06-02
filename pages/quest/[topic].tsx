@@ -140,7 +140,7 @@ export default function Questions() {
 
   const handleHideTimer = () => {
     setTimerShow(!timerShow);
-    localStorage.setItem('timer-hidden', timerShow ? "true" : "false")
+    localStorage.setItem("timer-hidden", timerShow ? "true" : "false");
   };
 
   useEffect(() => {
@@ -148,13 +148,12 @@ export default function Questions() {
       const timerHidden = JSON.parse(
         localStorage.getItem("timer-hidden") || ""
       );
-      if (timerHidden === true){
+      if (timerHidden === true) {
         setTimerShow(false);
-      }
-      else {
+      } else {
         setTimerShow(true);
       }
-    } else setTimerShow(true)
+    } else setTimerShow(true);
   }, []);
 
   useEffect(() => {
@@ -167,8 +166,8 @@ export default function Questions() {
       <Head>
         <title>{title}</title>
       </Head>
-      <main className="w-screen p-10 flex flex-col items-center min-h-screen md:pb-24">
-        <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw]">
+      <main className="w-screen flex flex-col items-center min-h-screen md:pb-24">
+        <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw] fixed bg-white dark:bg-slate-900 py-8 md:pt-8 md:py-0 md:relative">
           <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 dark:hover:bg-white dark:hover:text-black">
             <Link href={"/"}>
               <a>
@@ -176,7 +175,10 @@ export default function Questions() {
               </a>
             </Link>
           </div>{" "}
-          <div className="title select-none">{readyToShow && title}</div>{" "}
+          <div className="title-subtitle-container flex flex-col gap-3 items-center">
+            <div className="title select-none">{readyToShow && title}</div>{" "}
+            <Link href={'/'}><div className="homepage select-none text-sm border-b cursor-pointer"> DSA 375 </div></Link>
+          </div>
           <a
             href={randomURL}
             target="_blank"
@@ -188,7 +190,7 @@ export default function Questions() {
             </div>
           </a>
         </div>
-        <div className="time-container mt-8 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
+        <div className="time-container mt-32 md:mt-8 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
           <div
             className="close-timer text-xl cursor-pointer rounded-full hover:bg-black hover:text-white p-1 transition-all duration-300 dark:hover:bg-white dark:hover:text-black"
             onClick={handleHideTimer}
