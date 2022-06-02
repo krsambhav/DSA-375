@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           target={"_blank"}
           rel='noreferrer'
         >
-          <div className="text-sm border-b px-[1px] py-[1px] border-black">By Apna College</div>
+          <div className="text-sm border-b py-[1px] border-gray-500 hover:border-black hover:px-[3px] text-gray-500 hover:text-black transition-all duration-150 dark:text-gray-400 dark:border-gray-400 dark:hover:text-white dark:hover:border-white">By Apna College</div>
         </a>
         <div className="cards-container mt-10 md:mt-12 flex flex-row flex-wrap justify-center gap-10">
           {questionData.map((topic, index) => {
