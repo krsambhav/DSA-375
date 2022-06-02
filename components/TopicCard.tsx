@@ -21,6 +21,7 @@ export default function Card({ topic, title, qty, index }: { topic:string, title
       <div className="border-[0.1px] border-black w-[240px] h-[150px] flex flex-col justify-center items-center text-2xl cursor-pointer card transition-shadow hover:border-[1px] dark:border-white dark:hover:border-orange-200 topic-card hover:shadow-lg">
         <div className="title text-xl">{title}</div>
         <div className="qty text-base mt-5 font-light">{`${doneCount} / ${qty} Problems Solved`}</div>
+        {doneCount > 0 ? <div className="qty text-base mt-5 font-light">{`${qty - doneCount} Remaining`}</div> : <div className="qty text-base mt-5 font-light">{`Not Started Yet`}</div>}
       </div>
       </a>
     </Link>
