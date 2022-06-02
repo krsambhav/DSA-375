@@ -190,7 +190,7 @@ export default function Questions() {
         </div>
         <div className="time-container mt-8 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
           <div
-            className="close-timer text-xl cursor-pointer"
+            className="close-timer text-xl cursor-pointer rounded-full hover:bg-black hover:text-white p-1 transition-all duration-300 dark:hover:bg-white dark:hover:text-black"
             onClick={handleHideTimer}
           >
             {timerShow ? <IoEyeOffOutline /> : <IoEyeOutline />}
