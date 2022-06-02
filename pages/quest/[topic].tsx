@@ -114,8 +114,6 @@ export default function Questions() {
     setQuestions(previousData[topicIndex[topic]]);
   };
 
-  useEffect(() => {}, [questions]);
-
   const listenToScroll = () => {
     let heightToHideFrom = 500;
     const winScroll =
