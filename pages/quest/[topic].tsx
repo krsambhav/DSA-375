@@ -5,12 +5,14 @@ import QuestionCard from "../../components/QuestionCard";
 import questionData from "../../public/data.json";
 import { IoIosArrowRoundBack, IoLogoGithub } from "react-icons/io";
 import { FaRandom } from "react-icons/fa";
+import { BiHide } from "react-icons/bi";
 import Link from "next/link";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import ThemeChanger from "../../components/ThemeChanger";
 import { BsArrowUpCircleFill, BsFileEarmarkSpreadsheet } from "react-icons/bs";
 import { VscGithubAlt } from "react-icons/vsc";
 import Footer from "../../components/Footer";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 
 export default function Questions() {
   const [questions, setQuestions] = useState<any>();
@@ -19,6 +21,7 @@ export default function Questions() {
   const [readyToShow, setReadyToShow] = useState<boolean>(false);
   const [randomURL, setRandomURL] = useState<string>("");
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [timerShow, setTimerShow] = useState<boolean>(false);
   const router = useRouter();
   const topic: any = router.query["topic"] || "Questions";
   const topicIndex: any = {
@@ -120,20 +123,39 @@ export default function Questions() {
       document.body.scrollTop || document.documentElement.scrollTop;
 
     if (winScroll > heightToHideFrom) {
-        setIsVisible(true);
+      setIsVisible(true);
     } else {
       setIsVisible(false);
     }
   };
 
-  const scrollToTop = () =>{
+  const scrollToTop = () => {
     window.scrollTo({
-      top: 0, 
-      behavior: 'smooth'
+      top: 0,
+      behavior: "smooth",
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
     });
   };
+
+  const handleHideTimer = () => {
+    setTimerShow(!timerShow);
+    localStorage.setItem('timer-hidden', timerShow ? "true" : "false")
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("timer-hidden") !== null) {
+      const timerHidden = JSON.parse(
+        localStorage.getItem("timer-hidden") || ""
+      );
+      if (timerHidden === true){
+        setTimerShow(false);
+      }
+      else {
+        setTimerShow(true);
+      }
+    } else setTimerShow(true)
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
@@ -167,21 +189,31 @@ export default function Questions() {
           </a>
         </div>
         <div className="time-container mt-8 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
-          <div className="time-container flex flex-row flex-wrap gap-5 items-center justify-center">
-            <div className="time-box w-[80px] h-[30px] easy-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
-              5-10 mins
-            </div>
-            <div className="time-box w-[80px] h-[30px] medium-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
-              15-20 mins
-            </div>
-            <div className="time-box w-[80px] h-[30px] hard-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
-              45-60 mins
-            </div>
+          <div
+            className="close-timer text-xl cursor-pointer"
+            onClick={handleHideTimer}
+          >
+            {timerShow ? <IoEyeOffOutline /> : <IoEyeOutline />}
           </div>
-          <div className="disclaimer font-thin text-center text-xs md:text-sm select-none">
-            If you are a beginner, you can ignore this and follow at your own
-            pace.
-          </div>
+          {timerShow && (
+            <>
+              <div className="time-container flex flex-row flex-wrap gap-5 items-center justify-center">
+                <div className="time-box w-[80px] h-[30px] easy-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
+                  5-10 mins
+                </div>
+                <div className="time-box w-[80px] h-[30px] medium-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
+                  15-20 mins
+                </div>
+                <div className="time-box w-[80px] h-[30px] hard-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
+                  45-60 mins
+                </div>
+              </div>
+              <div className="disclaimer font-thin text-center text-xs md:text-sm select-none">
+                If you are a beginner, you can ignore this and follow at your
+                own pace.
+              </div>
+            </>
+          )}
         </div>
         <div className="questions-container flex flex-row flex-wrap items-center justify-center gap-10 mt-5 md:mx-16">
           {readyToShow &&
@@ -203,7 +235,10 @@ export default function Questions() {
             })}
         </div>
         {isVisible && (
-          <div className="cursor-pointer go-to-top-btn text-white bg-slate-900 border-[1px] border-black hover:bg-white hover:text-slate-900 dark:bg-white fixed right-10 bottom-20 text-2xl dark:text-slate-900 dark:hover:text-white dark:hover:bg-slate-900 dark:border-white rounded-full transition-colors duration-200" onClick={scrollToTop}>
+          <div
+            className="cursor-pointer go-to-top-btn text-white bg-slate-900 border-[1px] border-black hover:bg-white hover:text-slate-900 dark:bg-white fixed right-10 bottom-20 text-2xl dark:text-slate-900 dark:hover:text-white dark:hover:bg-slate-900 dark:border-white rounded-full transition-colors duration-200"
+            onClick={scrollToTop}
+          >
             <BsArrowUpCircleFill />
           </div>
         )}
