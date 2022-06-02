@@ -177,7 +177,11 @@ export default function Questions() {
           </div>{" "}
           <div className="title-subtitle-container flex flex-col gap-3 items-center">
             <div className="title select-none">{readyToShow && title}</div>{" "}
-            <Link href={'/'}><div className="homepage select-none text-sm border-b cursor-pointer hover:border-black transition-all duration-200 text-gray-500 hover:text-black dark:hover:border-white dark:border-gray-500 dark:text-gray-500 dark:hover:text-white"> DSA 375 </div></Link>
+            <Link href={"/"}>
+              <div className="homepage select-none text-sm border-b cursor-pointer hover:border-black transition-all duration-200 text-gray-500 hover:text-black dark:hover:border-white dark:border-gray-500 dark:text-gray-500 dark:hover:text-white">
+                DSA 375
+              </div>
+            </Link>
           </div>
           <a
             href={randomURL}
