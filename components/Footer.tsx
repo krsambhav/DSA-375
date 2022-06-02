@@ -4,9 +4,8 @@ import ThemeChanger from "./ThemeChanger";
 
 export default function Footer () {
   return (
-    <footer className="w-screen md:h-[60px]  md:fixed md:bottom-0 flex flex-row justify-center transition-all duration-300 bg-white dark:bg-slate-900 pb-10 md:pb-0">
-      <div className="footer-items-container flex flow-row items-center justify-center gap-10 h-full border-t-[.1px] w-fit px-10">
-      <a
+    <footer className="w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 transition-all duration-300 bg-white dark:bg-slate-900 pb-10 md:pb-0">
+        <a
           href="https://github.com/krsambhav/DSA-375/"
           target={"_blank"}
           rel="noreferrer"
@@ -21,7 +20,6 @@ export default function Footer () {
         >
           <BsFileEarmarkSpreadsheet className="text-lg" />
         </a>
-      </div>
       </footer>
   )
 }
