@@ -81,3 +81,12 @@
 .hard-nohover {
   box-shadow: 4px 4px rgb(255, 109, 109);
 }
+
+.confetti{
+  animation: 5s hideConfetti linear forwards;
+}
+
+@keyframes hideConfetti {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}

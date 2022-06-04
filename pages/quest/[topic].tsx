@@ -10,9 +10,11 @@ import Link from "next/link";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import ThemeChanger from "../../components/ThemeChanger";
 import { BsArrowUpCircleFill, BsFileEarmarkSpreadsheet } from "react-icons/bs";
-import { VscGithubAlt } from "react-icons/vsc";
+import { GiPartyPopper } from "react-icons/gi";
 import Footer from "../../components/Footer";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
 
 export default function Questions() {
   const [questions, setQuestions] = useState<any>();
@@ -22,6 +24,7 @@ export default function Questions() {
   const [randomURL, setRandomURL] = useState<string>("");
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [timerShow, setTimerShow] = useState<boolean>(false);
+  const [notDoneQuestions, setNotDoneQuestion] = useState<any>([]);
   const router = useRouter();
   const topic: any = router.query["topic"] || "Questions";
   const topicIndex: any = {
@@ -42,6 +45,7 @@ export default function Questions() {
     bitmanipulation: 14,
     segmenttrees: 15,
   };
+  const { width, height } = useWindowSize();
   // console.log(topic);
   useEffect(() => {
     // setQuestions(questionData);
@@ -72,13 +76,28 @@ export default function Questions() {
 
   useEffect(() => {
     if (!questions) return;
-    const randomNum = Math.floor(Math.random() * questions.problems.length);
-    setRandomURL(questions.problems[randomNum].url);
+    const notDoneQuestions = questions.problems.filter(
+      (problem: any) => problem.done === false
+    );
+    setNotDoneQuestion(notDoneQuestions);
   }, [questions]);
 
+  useEffect(() => {
+    if (!notDoneQuestions) return;
+    console.log(notDoneQuestions);
+    if (notDoneQuestions.length > 0) {
+      let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
+      setRandomURL(notDoneQuestions[randomNum].url);
+      console.log(randomNum);
+    }
+  }, [notDoneQuestions]);
+
   const setRandom = () => {
-    const randomNum = Math.floor(Math.random() * questions.problems.length);
-    setRandomURL(questions.problems[randomNum].url);
+    if (notDoneQuestions.length > 0) {
+      let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
+      setRandomURL(notDoneQuestions[randomNum].url);
+      console.log(randomNum);
+    }
   };
 
   const handleUpdateProgress = (url: string, questionIndex: number) => {
@@ -167,6 +186,11 @@ export default function Questions() {
         <title>{title}</title>
       </Head>
       <main className="w-screen flex flex-col items-center min-h-screen md:pb-24">
+        {notDoneQuestions && notDoneQuestions.length === 0 && (
+          <>
+            <Confetti className="confetti" width={width} height={height} opacity={1}/>
+          </>
+        )}
         <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw] fixed bg-white dark:bg-slate-900 py-8 md:pt-8 md:py-0 md:relative">
           <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 dark:hover:bg-white dark:hover:text-black">
             <Link href={"/"}>
@@ -183,16 +207,23 @@ export default function Questions() {
               </div>
             </Link>
           </div>
-          <a
-            href={randomURL}
-            target="_blank"
-            rel="noreferrer"
-            onClick={setRandom}
-          >
+          {notDoneQuestions && notDoneQuestions.length > 0 ? (
+            <a
+              href={randomURL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={setRandom}
+              className="icon md:fixed md:right-10 rounded-full border border-transparent dark:text-white transition-all duration-300 text-lg hover:bg-black p-2 hover:text-white dark:hover:bg-white dark:hover:text-black"
+            >
+              <div>
+                <FaRandom />
+              </div>
+            </a>
+          ) : (
             <div className="icon md:fixed md:right-10 rounded-full border border-transparent dark:text-white transition-all duration-300 text-lg hover:bg-black p-2 hover:text-white dark:hover:bg-white dark:hover:text-black">
-              <FaRandom />
+              <GiPartyPopper />
             </div>
-          </a>
+          )}
         </div>
         <div className="time-container mt-32 md:mt-8 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
           <div
