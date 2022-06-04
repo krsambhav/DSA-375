@@ -220,7 +220,7 @@ export default function Questions() {
               </div>
             </a>
           ) : (
-            <div className="icon md:fixed md:right-10 rounded-full border border-transparent dark:text-white transition-all duration-300 text-lg hover:bg-black p-2 hover:text-white dark:hover:bg-white dark:hover:text-black">
+            <div className="icon md:fixed md:right-10 rounded-full border border-transparent dark:text-white transition-all duration-300 text-lg  p-2">
               <GiPartyPopper />
             </div>
           )}
