@@ -26,7 +26,9 @@ export default function Questions() {
   const [timerShow, setTimerShow] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number>();
   const [windowHeight, setWindowHeight] = useState<number>();
-  const [notDoneQuestions, setNotDoneQuestion] = useState<any>([]);
+  const [doneQuestions, setDoneQuestions] = useState<any>();
+  const [totalQuestions, setTotalQuestions] = useState<any>();
+  const [notDoneQuestions, setNotDoneQuestions] = useState<any>([]);
   const router = useRouter();
   const { width, height } = useWindowSize();
   const topic: any = router.query["topic"] || "Questions";
@@ -86,16 +88,17 @@ export default function Questions() {
     const notDoneQuestions = questions.problems.filter(
       (problem: any) => problem.done === false
     );
-    setNotDoneQuestion(notDoneQuestions);
+    setNotDoneQuestions(notDoneQuestions)
+    setTotalQuestions(questions.problems.length)
   }, [questions]);
 
   useEffect(() => {
     if (!notDoneQuestions) return;
-    console.log(notDoneQuestions);
+    // console.log(notDoneQuestions);
     if (notDoneQuestions.length > 0) {
       let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
       setRandomURL(notDoneQuestions[randomNum].url);
-      console.log(randomNum);
+      // console.log(randomNum);
     }
   }, [notDoneQuestions]);
 
@@ -103,7 +106,7 @@ export default function Questions() {
     if (notDoneQuestions.length > 0) {
       let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
       setRandomURL(notDoneQuestions[randomNum].url);
-      console.log(randomNum);
+      // console.log(randomNum);
     }
   };
 
@@ -113,7 +116,7 @@ export default function Questions() {
       localStorage.getItem("progressData") !== null
         ? JSON.parse(localStorage.getItem("progressData") || "")
         : questionData;
-    console.log(previousData);
+    // console.log(previousData);
     // console.log(previousData[topicIndex[topic]]);
     let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
     tempData = { ...tempData, done: !tempData.done };
@@ -133,7 +136,7 @@ export default function Questions() {
       localStorage.getItem("progressData") !== null
         ? JSON.parse(localStorage.getItem("progressData") || "")
         : questionData;
-    console.log(previousData);
+    // console.log(previousData);
     // console.log(previousData[topicIndex[topic]]);
     let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
     tempData = { ...tempData, notes: notes };
@@ -194,7 +197,7 @@ export default function Questions() {
       </Head>
       <main className="w-screen flex flex-col items-center min-h-screen md:pb-24">
         {windowWidth && notDoneQuestions && notDoneQuestions.length === 0 && (
-            windowWidth>0 && <Confetti className="confetti" width={windowWidth} height={windowHeight}/>
+            windowWidth > 0 && <Confetti className="confetti" width={windowWidth} height={windowHeight}/>
         )}
         <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw] fixed bg-white dark:bg-slate-900 py-8 md:pt-8 md:py-0 md:relative transition-all duration-300">
           <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 dark:hover:bg-white dark:hover:text-black">
@@ -285,7 +288,7 @@ export default function Questions() {
           </div>
         )}
       </main>
-      <Footer />
+      <Footer doneQuestions={totalQuestions-notDoneQuestions.length} totalQuestions={totalQuestions} />
     </div>
   );
 }
