@@ -17,7 +17,7 @@ export default function Footer({
 }) {
   return (
     <footer className="mt-10 md:mt-0 w-screen flex flow-row items-center justify-center md:h-[60px] gap-10 md:fixed md:bottom-0 transition-all duration-300 bg-white dark:bg-slate-900 pb-10 md:pb-0">
-      {doneQuestionsAcrossTopics && (
+      {doneQuestionsAcrossTopics ? (
         <div className="done-count-container text-black dark:text-white select-none self-end hidden md:fixed left-10 bottom-4 md:flex flex-row items-center gap-3">
           {" "}
           <div className="progress-circle w-[20px]">
@@ -32,7 +32,7 @@ export default function Footer({
           </div>{" "}
           {doneQuestionsAcrossTopics} / 375 Solved Overall
         </div>
-      )}
+      ) : ""}
       <div className="middle-items-container flex flow-row items-center justify-center gap-10">
         <a
           href="https://github.com/krsambhav/DSA-375/"
@@ -51,7 +51,7 @@ export default function Footer({
         </a>
       </div>
 
-      {doneQuestions && totalQuestions && (
+      {doneQuestions && totalQuestions ? (
         <div className="done-count-container text-black dark:text-white select-none self-end hidden md:fixed right-10 bottom-4 md:flex flex-row items-center gap-3">
           {" "}
           <div className="progress-circle w-[20px]">
@@ -66,7 +66,7 @@ export default function Footer({
           </div>{" "}
           {doneQuestions} / {totalQuestions} Solved In {title}
         </div>
-      )}
+      ) : ""}
     </footer>
   );
 }
