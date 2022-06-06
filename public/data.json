@@ -182,7 +182,9 @@
       {
         "title": "Mo's Algorithm",
         "url": "https://www.geeksforgeeks.org/mos-algorithm-query-square-root-decomposition-set-1-introduction/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes":""
       }
     ]
   },
@@ -342,7 +344,9 @@
         "title": "Word Wrap",
         "url": "https://practice.geeksforgeeks.org/problems/word-wrap1646/1",
         "level": "hard",
-        "remark": "use Dynaming Programming"
+        "remark": "use Dynaming Programming",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -417,7 +421,9 @@
       {
         "title": "Maximum Size Rectangle of all 1s",
         "url": "https://www.geeksforgeeks.org/maximum-size-rectangle-binary-sub-matrix-1s/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -582,7 +588,9 @@
       {
         "title": "Minimum Swaps to Sort",
         "url": "https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -817,7 +825,9 @@
       {
         "title": "Print all k-sum paths in a binary tree",
         "url": "https://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -968,7 +978,9 @@
       {
         "title": "Arithmetic Expressions",
         "url": "https://www.hackerrank.com/challenges/arithmetic-expressions/problem",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -1156,7 +1168,9 @@
       {
         "title": "Subtract two numbers represented as linked lists",
         "url": "https://www.geeksforgeeks.org/subtract-two-numbers-represented-as-linked-lists/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -1349,7 +1363,9 @@
       {
         "title": "Find a tour that visits all stations",
         "url": "https://www.geeksforgeeks.org/find-a-tour-that-visits-all-stations/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -1507,7 +1523,9 @@
       {
         "title": "Minimum Cost to cut a board into squares",
         "url": "https://www.geeksforgeeks.org/minimum-cost-cut-board-squares/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -1659,7 +1677,9 @@
         "title": "Largest BST in a Binary Tree",
         "url": "https://www.geeksforgeeks.org/largest-bst-binary-tree-set-2/",
         "level": "hard",
-        "remark": "Important"
+        "remark": "Important",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -1859,7 +1879,9 @@
       {
         "title": "K maximum sum combinations from two arrays",
         "url": "https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-arrays/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -2145,7 +2167,9 @@
       {
         "title": "Water Jug 2",
         "url": "https://www.geeksforgeeks.org/water-jug-problem-using-bfs/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -2191,7 +2215,9 @@
       {
         "title": "Implement a Phone Directory",
         "url": "https://practice.geeksforgeeks.org/problems/phone-directory4628/1",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -2573,7 +2599,9 @@
       {
         "title": "Largest area rectangular sub-matrix with equal number of 1’s and 0’s",
         "url": "https://www.geeksforgeeks.org/largest-area-rectangular-sub-matrix-equal-number-1s-0s/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -2647,7 +2675,9 @@
       {
         "title": "Power Set",
         "url": "https://practice.geeksforgeeks.org/problems/power-set4302/1",
-        "level": "medium"
+        "level": "medium",
+        "done": false,
+        "notes": ""
       }
     ]
   },
@@ -2693,7 +2723,9 @@
       {
         "title": "Count of Smaller Numbers After Self",
         "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
-        "level": "hard"
+        "level": "hard",
+        "done": false,
+        "notes": ""
       }
     ]
   }
