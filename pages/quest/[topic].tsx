@@ -15,7 +15,6 @@ import Footer from "../../components/Footer";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
-
 export default function Questions() {
   const [questions, setQuestions] = useState<any>();
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -26,7 +25,6 @@ export default function Questions() {
   const [timerShow, setTimerShow] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number>();
   const [windowHeight, setWindowHeight] = useState<number>();
-  const [doneQuestions, setDoneQuestions] = useState<any>();
   const [totalQuestions, setTotalQuestions] = useState<any>();
   const [notDoneQuestions, setNotDoneQuestions] = useState<any>([]);
   const router = useRouter();
@@ -51,16 +49,12 @@ export default function Questions() {
     segmenttrees: 15,
   };
   useEffect(() => {
-    if(!questions) return;
+    if (!questions) return;
     setWindowHeight(height);
-    setWindowWidth(width)
-  })
-  // console.log(topic);
+    setWindowWidth(width);
+  });
   useEffect(() => {
-    // setQuestions(questionData);
     if (!router.isReady) return;
-    // setQuestions(questionData.filter((set) => set.topic === topic)[0]);
-    // setTitle(questionData.filter((set) => set.topic === topic)[0]["title"]);
     if (localStorage.getItem("progressData") == null) {
       localStorage.setItem("progressData", JSON.stringify(questionData));
       setQuestions(questionData.filter((set: any) => set.topic === topic)[0]);
@@ -78,54 +72,42 @@ export default function Questions() {
         localQuestionData.filter((set: any) => set.topic === topic)[0]["title"]
       );
     }
-    // console.log(localQuestionData);
-
     setReadyToShow(true);
   }, [topic, router.isReady]);
 
   useEffect(() => {
     if (!questions) return;
     const notDoneQuestions = questions.problems.filter(
-      (problem: any) => problem.done === false
+      (problem: any) => problem.done === false || !problem.done
     );
-    setNotDoneQuestions(notDoneQuestions)
-    setTotalQuestions(questions.problems.length)
+    setNotDoneQuestions(notDoneQuestions);
+    setTotalQuestions(questions.problems.length);
   }, [questions]);
 
   useEffect(() => {
     if (!notDoneQuestions) return;
-    // console.log(notDoneQuestions);
     if (notDoneQuestions.length > 0) {
       let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
       setRandomURL(notDoneQuestions[randomNum].url);
-      // console.log(randomNum);
     }
   }, [notDoneQuestions]);
-
   const setRandom = () => {
     if (notDoneQuestions.length > 0) {
       let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
       setRandomURL(notDoneQuestions[randomNum].url);
-      // console.log(randomNum);
     }
   };
-
   const handleUpdateProgress = (url: string, questionIndex: number) => {
-    // const topicIndex = questionData.indexOf(questions);
     let previousData =
       localStorage.getItem("progressData") !== null
         ? JSON.parse(localStorage.getItem("progressData") || "")
         : questionData;
-    // console.log(previousData);
-    // console.log(previousData[topicIndex[topic]]);
     let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
     tempData = { ...tempData, done: !tempData.done };
     previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
-    // console.log(previousData);
     localStorage.setItem("progressData", JSON.stringify(previousData));
     setQuestions(previousData[topicIndex[topic]]);
   };
-
   const handleNotesEdit = (
     notes: string,
     url: string,
@@ -136,42 +118,32 @@ export default function Questions() {
       localStorage.getItem("progressData") !== null
         ? JSON.parse(localStorage.getItem("progressData") || "")
         : questionData;
-    // console.log(previousData);
-    // console.log(previousData[topicIndex[topic]]);
     let tempData = previousData[topicIndex[topic]]["problems"][questionIndex];
     tempData = { ...tempData, notes: notes };
     previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
-    // console.log(previousData);
     localStorage.setItem("progressData", JSON.stringify(previousData));
     setQuestions(previousData[topicIndex[topic]]);
   };
-
   const listenToScroll = () => {
     let heightToHideFrom = 500;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-
     if (winScroll > heightToHideFrom) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
     }
   };
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
     });
   };
-
   const handleHideTimer = () => {
     setTimerShow(!timerShow);
     localStorage.setItem("timer-hidden", timerShow ? "true" : "false");
   };
-
   useEffect(() => {
     if (localStorage.getItem("timer-hidden") !== null) {
       const timerHidden = JSON.parse(
@@ -184,21 +156,26 @@ export default function Questions() {
       }
     } else setTimerShow(true);
   }, []);
-
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
-
   return (
     <div className="transition-all duration-300 bg-white text-black dark:bg-slate-900 dark:text-white">
       <Head>
         <title>{title}</title>
       </Head>
       <main className="w-screen flex flex-col items-center min-h-screen md:pb-24">
-        {windowWidth && notDoneQuestions && notDoneQuestions.length === 0 && (
-            windowWidth > 0 && <Confetti className="confetti" width={windowWidth} height={windowHeight}/>
-        )}
+        {windowWidth &&
+          notDoneQuestions &&
+          notDoneQuestions.length === 0 &&
+          windowWidth > 0 && (
+            <Confetti
+              className="confetti"
+              width={windowWidth}
+              height={windowHeight}
+            />
+          )}
         <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw] fixed bg-white dark:bg-slate-900 py-8 md:pt-8 md:py-0 md:relative transition-all duration-300">
           <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 dark:hover:bg-white dark:hover:text-black">
             <Link href={"/"}>
@@ -288,7 +265,10 @@ export default function Questions() {
           </div>
         )}
       </main>
-      <Footer doneQuestions={totalQuestions-notDoneQuestions.length} totalQuestions={totalQuestions} />
+      <Footer
+        doneQuestions={totalQuestions - notDoneQuestions.length}
+        totalQuestions={totalQuestions}
+      />
     </div>
   );
 }
