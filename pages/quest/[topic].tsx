@@ -27,6 +27,9 @@ export default function Questions() {
   const [windowHeight, setWindowHeight] = useState<number>();
   const [totalQuestions, setTotalQuestions] = useState<any>();
   const [notDoneQuestions, setNotDoneQuestions] = useState<any>([]);
+  const [currentProgress, setCurrentProgress] = useState<any>();
+  const [doneQuestionsAcrossTopics, setDoneQuestionsAcrossTopics] = useState<number>(0);
+  const [totalQuestionsAcrossTopics, setTotalQuestionsAcrossTopics] = useState<number>(375);
   const router = useRouter();
   const { width, height } = useWindowSize();
   const topic: any = router.query["topic"] || "Questions";
@@ -61,6 +64,7 @@ export default function Questions() {
       setTitle(
         questionData.filter((set: any) => set.topic === topic)[0]["title"]
       );
+      setCurrentProgress(questionData);
     } else {
       const localQuestionData = JSON.parse(
         localStorage.getItem("progressData") || ""
@@ -71,9 +75,22 @@ export default function Questions() {
       setTitle(
         localQuestionData.filter((set: any) => set.topic === topic)[0]["title"]
       );
+      setCurrentProgress(localQuestionData);
     }
     setReadyToShow(true);
   }, [topic, router.isReady]);
+
+  useEffect(() => {
+    if (!currentProgress) return;
+    let doneQuestionsAcrossTopics = 0;
+    currentProgress.map((topic:any) => {
+      topic.problems.map((problem:any) => {
+        if(problem.done === true) 
+          doneQuestionsAcrossTopics++;
+      })
+    })
+    setDoneQuestionsAcrossTopics(doneQuestionsAcrossTopics);
+  }, [currentProgress])
 
   useEffect(() => {
     if (!questions) return;
@@ -83,6 +100,10 @@ export default function Questions() {
     setNotDoneQuestions(notDoneQuestions);
     setTotalQuestions(questions.problems.length);
   }, [questions]);
+
+  useEffect(() => {
+    console.log(currentProgress);
+  }, [currentProgress])
 
   useEffect(() => {
     if (!notDoneQuestions) return;
@@ -107,6 +128,7 @@ export default function Questions() {
     previousData[topicIndex[topic]]["problems"][questionIndex] = tempData;
     localStorage.setItem("progressData", JSON.stringify(previousData));
     setQuestions(previousData[topicIndex[topic]]);
+    setCurrentProgress(previousData);
   };
   const handleNotesEdit = (
     notes: string,
@@ -268,6 +290,8 @@ export default function Questions() {
       <Footer
         doneQuestions={totalQuestions - notDoneQuestions.length}
         totalQuestions={totalQuestions}
+        doneQuestionsAcrossTopics={doneQuestionsAcrossTopics}
+        title={title}
       />
     </div>
   );
