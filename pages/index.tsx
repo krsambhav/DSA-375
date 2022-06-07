@@ -117,11 +117,11 @@ const Home: NextPage = () => {
                       value={(hardSolved / hardProblems) * 100}
                       text={`${Math.round(
                         (totalSolved / totalProblems) * 100
-                      )}% Solved`}
+                      )}%`}
                       strokeWidth={10}
                       styles={buildStyles({
                         textColor: "#aaa",
-                        textSize: 13,
+                        textSize: 20,
                         pathColor: "rgb(255, 109, 109)",
                         trailColor: "transparent",
                       })}
