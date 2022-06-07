@@ -27,6 +27,7 @@ export default function Footer({
               styles={buildStyles({
                 strokeLinecap: "butt",
                 pathColor: "red",
+                trailColor: "#f0f0f0"
               })}
             />
           </div>{" "}
@@ -61,6 +62,7 @@ export default function Footer({
               styles={buildStyles({
                 strokeLinecap: "butt",
                 pathColor: "red",
+                trailColor: "#f0f0f0"
               })}
             />
           </div>{" "}
