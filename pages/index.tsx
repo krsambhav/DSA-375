@@ -19,12 +19,12 @@ import { useEffect, useState } from "react";
 const Home: NextPage = () => {
   const [totalSolved, setTotalSolved] = useState<number>();
   const [totalProblems, settotalProblems] = useState<number>();
-  const [easyProblems, setEasyProblems] = useState<number>(0);
-  const [mediumProblems, setMediumProblems] = useState<number>(0);
-  const [hardProblems, setHardProblems] = useState<number>(0);
-  const [easySolved, setEasySolved] = useState<number>(3000);
-  const [mediumSolved, setMediumSolved] = useState<number>(3000);
-  const [hardSolved, setHardSolved] = useState<number>(3000);
+  const [easyProblems, setEasyProblems] = useState<number>(10);
+  const [mediumProblems, setMediumProblems] = useState<number>(10);
+  const [hardProblems, setHardProblems] = useState<number>(10);
+  const [easySolved, setEasySolved] = useState<number>(0);
+  const [mediumSolved, setMediumSolved] = useState<number>(0);
+  const [hardSolved, setHardSolved] = useState<number>(0);
   useEffect(() => {
     if (localStorage.getItem("progressData") === null) return;
     const progressData = JSON.parse(
@@ -58,9 +58,11 @@ const Home: NextPage = () => {
     setMediumProblems(mediumProblems);
     setHardProblems(hardProblems);
     setTotalSolved(solvedCount);
-    setEasySolved(easySolved);
-    setMediumSolved(mediumSolved);
-    setHardSolved(hardSolved);
+    setTimeout(() => {
+      setEasySolved(easySolved);
+      setMediumSolved(mediumSolved);
+      setHardSolved(hardSolved);
+    }, 300);
     settotalProblems(totalProblems);
   }, []);
   return (
@@ -139,8 +141,9 @@ const Home: NextPage = () => {
               styles={buildStyles({
                 strokeLinecap: "butt",
                 textSize: "12",
-                textColor: "#AAA",
-                pathColor: "black",
+                textColor: "transparent",
+                trailColor: "transparent",
+                pathColor: "transparent",
               })}
             />
           </div>
