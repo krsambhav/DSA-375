@@ -34,6 +34,7 @@ export default function QuestionCard({
     setShowNotes(!showNotes);
   };
 
+  //Set Notes Data
   useEffect(() => {
     setNotesData(notes);
   }, []);

@@ -3,13 +3,10 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import QuestionCard from "../../components/QuestionCard";
 import questionData from "../../public/data.json";
-import { IoIosArrowRoundBack, IoLogoGithub } from "react-icons/io";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import { FaRandom } from "react-icons/fa";
-import { BiHide } from "react-icons/bi";
 import Link from "next/link";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
-import ThemeChanger from "../../components/ThemeChanger";
-import { BsArrowUpCircleFill, BsFileEarmarkSpreadsheet } from "react-icons/bs";
+import { BsArrowUpCircleFill } from "react-icons/bs";
 import { GiPartyPopper } from "react-icons/gi";
 import Footer from "../../components/Footer";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
@@ -17,7 +14,6 @@ import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 export default function Questions() {
   const [questions, setQuestions] = useState<any>();
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
   const [readyToShow, setReadyToShow] = useState<boolean>(false);
   const [randomURL, setRandomURL] = useState<string>("");
@@ -26,13 +22,18 @@ export default function Questions() {
   const [windowWidth, setWindowWidth] = useState<number>();
   const [windowHeight, setWindowHeight] = useState<number>();
   const [totalQuestions, setTotalQuestions] = useState<any>();
-  const [notDoneQuestions, setNotDoneQuestions] = useState<any>([]);
+  const [notSolvedQuestions, setNotSolvedQuestions] = useState<any>([]);
   const [currentProgress, setCurrentProgress] = useState<any>();
-  const [doneQuestionsAcrossTopics, setDoneQuestionsAcrossTopics] = useState<number>(0);
-  const [totalQuestionsAcrossTopics, setTotalQuestionsAcrossTopics] = useState<number>(375);
-  const router = useRouter();
+  const [solvedProblemsAcrossTopics, setSolvedProblemsAcrossTopics] =
+    useState<number>(0);
+
+  //Getting Current Window Size
   const { width, height } = useWindowSize();
+
+  //Initialising Router
+  const router = useRouter();
   const topic: any = router.query["topic"] || "Questions";
+
   const topicIndex: any = {
     arrays: 0,
     strings: 1,
@@ -51,11 +52,15 @@ export default function Questions() {
     bitmanipulation: 14,
     segmenttrees: 15,
   };
+
+  //Setting Current Window Size
   useEffect(() => {
     if (!questions) return;
     setWindowHeight(height);
     setWindowWidth(width);
   });
+
+  //Initialising Problems If Already In LocalStorage Else From data.json
   useEffect(() => {
     if (!router.isReady) return;
     if (localStorage.getItem("progressData") == null) {
@@ -80,44 +85,46 @@ export default function Questions() {
     setReadyToShow(true);
   }, [topic, router.isReady]);
 
+  //Setting Total Solved Questions
   useEffect(() => {
     if (!currentProgress) return;
-    let doneQuestionsAcrossTopics = 0;
-    currentProgress.map((topic:any) => {
-      topic.problems.map((problem:any) => {
-        if(problem.done === true) 
-          doneQuestionsAcrossTopics++;
-      })
-    })
-    setDoneQuestionsAcrossTopics(doneQuestionsAcrossTopics);
-  }, [currentProgress])
+    let solvedProblemsAcrossTopics = 0;
+    currentProgress.map((topic: any) => {
+      topic.problems.map((problem: any) => {
+        if (problem.done === true) solvedProblemsAcrossTopics++;
+      });
+    });
+    setSolvedProblemsAcrossTopics(solvedProblemsAcrossTopics);
+  }, [currentProgress]);
 
+  //Setting Not Solved Questions
   useEffect(() => {
     if (!questions) return;
-    const notDoneQuestions = questions.problems.filter(
+    const notSolvedQuestions = questions.problems.filter(
       (problem: any) => problem.done === false || !problem.done
     );
-    setNotDoneQuestions(notDoneQuestions);
+    setNotSolvedQuestions(notSolvedQuestions);
     setTotalQuestions(questions.problems.length);
   }, [questions]);
 
+  //Set Random URL For Shuffle Button On Start
   useEffect(() => {
-    console.log(currentProgress);
-  }, [currentProgress])
-
-  useEffect(() => {
-    if (!notDoneQuestions) return;
-    if (notDoneQuestions.length > 0) {
-      let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
-      setRandomURL(notDoneQuestions[randomNum].url);
+    if (!notSolvedQuestions) return;
+    if (notSolvedQuestions.length > 0) {
+      let randomNum = Math.floor(Math.random() * notSolvedQuestions.length);
+      setRandomURL(notSolvedQuestions[randomNum].url);
     }
-  }, [notDoneQuestions]);
+  }, [notSolvedQuestions]);
+
+  //Set Random URL For Shuffle Button On Click Of Shuffle Button
   const setRandom = () => {
-    if (notDoneQuestions.length > 0) {
-      let randomNum = Math.floor(Math.random() * notDoneQuestions.length);
-      setRandomURL(notDoneQuestions[randomNum].url);
+    if (notSolvedQuestions.length > 0) {
+      let randomNum = Math.floor(Math.random() * notSolvedQuestions.length);
+      setRandomURL(notSolvedQuestions[randomNum].url);
     }
   };
+
+  //Update Progress On Question Solve
   const handleUpdateProgress = (url: string, questionIndex: number) => {
     let previousData =
       localStorage.getItem("progressData") !== null
@@ -130,6 +137,8 @@ export default function Questions() {
     setQuestions(previousData[topicIndex[topic]]);
     setCurrentProgress(previousData);
   };
+
+  //Update Progress On Notes Entry
   const handleNotesEdit = (
     notes: string,
     url: string,
@@ -146,6 +155,8 @@ export default function Questions() {
     localStorage.setItem("progressData", JSON.stringify(previousData));
     setQuestions(previousData[topicIndex[topic]]);
   };
+
+  //Enable Scroll To Top Button On Scroll Down
   const listenToScroll = () => {
     let heightToHideFrom = 500;
     const winScroll =
@@ -156,16 +167,22 @@ export default function Questions() {
       setIsVisible(false);
     }
   };
+
+  //Scroll To Top On ScrollToTop Button Click
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
+
+  //Handler For Recommended Timer Hide Button
   const handleHideTimer = () => {
     setTimerShow(!timerShow);
     localStorage.setItem("timer-hidden", timerShow ? "true" : "false");
   };
+
+  //Check If Recommended Timer Is Hidden Previously Or Not
   useEffect(() => {
     if (localStorage.getItem("timer-hidden") !== null) {
       const timerHidden = JSON.parse(
@@ -178,10 +195,13 @@ export default function Questions() {
       }
     } else setTimerShow(true);
   }, []);
+
+  //Enable Scroll Listener On Scroll
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
+
   return (
     <div className="transition-all duration-300 bg-white text-black dark:bg-slate-900 dark:text-white">
       <Head>
@@ -189,8 +209,8 @@ export default function Questions() {
       </Head>
       <main className="w-screen flex flex-col items-center min-h-screen md:pb-24">
         {windowWidth &&
-          notDoneQuestions &&
-          notDoneQuestions.length === 0 &&
+          notSolvedQuestions &&
+          notSolvedQuestions.length === 0 &&
           windowWidth > 0 && (
             <Confetti
               className="confetti"
@@ -214,7 +234,7 @@ export default function Questions() {
               </div>
             </Link>
           </div>
-          {notDoneQuestions && notDoneQuestions.length > 0 ? (
+          {notSolvedQuestions && notSolvedQuestions.length > 0 ? (
             <a
               href={randomURL}
               target="_blank"
@@ -288,9 +308,9 @@ export default function Questions() {
         )}
       </main>
       <Footer
-        doneQuestions={totalQuestions - notDoneQuestions.length}
+        doneQuestions={totalQuestions - notSolvedQuestions.length}
         totalQuestions={totalQuestions}
-        doneQuestionsAcrossTopics={doneQuestionsAcrossTopics}
+        solvedProblemsAcrossTopics={solvedProblemsAcrossTopics}
         title={title}
       />
     </div>

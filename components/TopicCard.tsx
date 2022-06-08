@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 export default function Card({ topic, title, qty, index }: { topic:string, title: string; qty?: any; index:number }) {
   const [doneCount, setDoneCount] = useState(0)
+
+  //Set Total Solved Problems In Specific Topic
   useEffect(() => {
     if(localStorage.getItem('progressData') === null) return;
     const progressData = JSON.parse(localStorage.getItem('progressData') || "{}")

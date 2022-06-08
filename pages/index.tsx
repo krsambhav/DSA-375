@@ -1,12 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Card from "../components/TopicCard";
-import styles from "../styles/Home.module.css";
 import questionData from "../public/data.json";
-import { IoLogoGithub } from "react-icons/io";
-import ThemeChanger from "../components/ThemeChanger";
-import { SiGooglesheets } from "react-icons/si";
 import Footer from "../components/Footer";
 import {
   buildStyles,
@@ -25,6 +20,8 @@ const Home: NextPage = () => {
   const [easySolved, setEasySolved] = useState<number>(0);
   const [mediumSolved, setMediumSolved] = useState<number>(0);
   const [hardSolved, setHardSolved] = useState<number>(0);
+
+  //Set Current Progress If Progress Already Present In LocalStorage
   useEffect(() => {
     if (localStorage.getItem("progressData") === null) return;
     const progressData = JSON.parse(
@@ -65,6 +62,7 @@ const Home: NextPage = () => {
     }, 300);
     settotalProblems(totalProblems);
   }, []);
+
   return (
     <div className="transition-all duration-300 bg-white dark:bg-slate-900 pb-10">
       <Head>
@@ -86,18 +84,6 @@ const Home: NextPage = () => {
         </a>
         {totalSolved && totalProblems ? (
           <div className="progress-container mt-10 w-[100px]">
-            {/* <CircularProgressbar
-              value={(totalSolved / totalProblems) * 100}
-              text={`${Math.round(
-                (totalSolved / totalProblems) * 100
-              )}% Solved`}
-              styles={buildStyles({
-                strokeLinecap: "butt",
-                textSize: "14",
-                textColor: "#AAA",
-                pathColor: "#ff6d6d",
-              })}
-            /> */}
             <CircularProgressbarWithChildren
               value={(easySolved / easyProblems) * 100}
               strokeWidth={6}
