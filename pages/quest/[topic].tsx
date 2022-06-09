@@ -12,6 +12,11 @@ import Footer from "../../components/Footer";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
+import {
+  buildStyles,
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+} from "react-circular-progressbar";
 export default function Questions() {
   const [questions, setQuestions] = useState<any>();
   const [title, setTitle] = useState<string>("");
@@ -24,6 +29,7 @@ export default function Questions() {
   const [totalQuestions, setTotalQuestions] = useState<any>();
   const [notSolvedQuestions, setNotSolvedQuestions] = useState<any>([]);
   const [currentProgress, setCurrentProgress] = useState<any>();
+  const [categoricalProgress, setCategoricalProgress] = useState<any>();
   const [solvedProblemsAcrossTopics, setSolvedProblemsAcrossTopics] =
     useState<number>(0);
 
@@ -202,6 +208,60 @@ export default function Questions() {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
 
+  useEffect(() => {
+    if (!currentProgress) return;
+    const totalProgressData =
+      localStorage.getItem("progressData") !== null
+        ? JSON.parse(localStorage.getItem("progressData") || "")
+        : questionData;
+    const topicProgressData = totalProgressData[topicIndex[topic]];
+    const categoricalProgress = {
+      totalProblems:0,
+      totalSolved:0,
+      totalEasyProblems: 0,
+      totalEasySolved: 0,
+      totalMediumProblems: 0,
+      totalMediumSolved: 0,
+      totalHardProblems: 0,
+      totalHardSolved: 0,
+      topicProblems:0,
+      topicSolved:0,
+      topicEasyProblems: 0,
+      topicEasySolved: 0,
+      topicMediumProblems: 0,
+      topicMediumSolved: 0,
+      topicHardProblems: 0,
+      topicHardSolved: 0
+    };
+    totalProgressData.map((topic: any) => {
+      topic.problems.map((problem: any) => {
+        categoricalProgress.totalProblems++;
+        problem.done && categoricalProgress.totalSolved++;
+        problem.level === "easy" && categoricalProgress.totalEasyProblems++;
+        problem.level === "medium" && categoricalProgress.totalMediumProblems++;
+        problem.level === "hard" && categoricalProgress.totalHardProblems++;
+        if (problem.done) {
+          problem.level === "easy" && categoricalProgress.totalEasySolved++;
+          problem.level === "medium" && categoricalProgress.totalMediumSolved++;
+          problem.level === "hard" && categoricalProgress.totalHardSolved++;
+        }
+      });
+    });
+    topicProgressData.problems.map((problem: any) => {
+        categoricalProgress.topicProblems++;
+        problem.done && categoricalProgress.topicSolved++;
+        problem.level === "easy" && categoricalProgress.topicEasyProblems++;
+        problem.level === "medium" && categoricalProgress.topicMediumProblems++;
+        problem.level === "hard" && categoricalProgress.topicHardProblems++;
+        if (problem.done) {
+          problem.level === "easy" && categoricalProgress.topicEasySolved++;
+          problem.level === "medium" && categoricalProgress.topicMediumSolved++;
+          problem.level === "hard" && categoricalProgress.topicHardSolved++;
+        }
+    });
+    setCategoricalProgress(categoricalProgress);
+  }, [currentProgress]);
+
   return (
     <div className="transition-all duration-300 bg-white text-black dark:bg-slate-900 dark:text-white">
       <Head>
@@ -218,7 +278,7 @@ export default function Questions() {
               height={windowHeight}
             />
           )}
-        <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw] fixed bg-white dark:bg-slate-900 py-8 md:pt-8 md:py-0 md:relative transition-all duration-300">
+        <div className="title-container text-3xl flex flex-row items-center justify-between md:justify-center w-[95vw] fixed bg-white dark:bg-slate-900 py-8 md:pt-8 md:py-0 md:relative transition-all duration-300 z-10">
           <div className="icon md:fixed md:left-10 rounded-full border border-transparent hover:bg-black hover:text-white transition-all duration-300 dark:hover:bg-white dark:hover:text-black">
             <Link href={"/"}>
               <a>
@@ -253,14 +313,43 @@ export default function Questions() {
           )}
         </div>
         <div className="time-container mt-32 md:mt-8 mb-6 flex flex-col items-center justify-center flex-wrap md:px-10 py-3 gap-5">
-          <div
-            className="close-timer text-xl cursor-pointer rounded-full hover:bg-black hover:text-white p-1 transition-all duration-300 dark:hover:bg-white dark:hover:text-black"
-            onClick={handleHideTimer}
-          >
-            {timerShow ? <IoEyeOffOutline /> : <IoEyeOutline />}
-          </div>
-          {timerShow && (
-            <>
+          <div className="flex flex-row items-center justify-between w-[90vw] md:w-[70vw]">
+            <div className="w-[80px]">
+              {categoricalProgress ? 
+              <CircularProgressbarWithChildren
+                value={categoricalProgress.totalEasySolved/categoricalProgress.totalEasyProblems*100}
+                strokeWidth={6}
+                styles={buildStyles({
+                  pathColor: "rgb(169, 242, 24)",
+                  trailColor: "transparent",
+                })}
+              >
+                <div style={{ width: "84%" }}>
+                  <CircularProgressbarWithChildren
+                    value={categoricalProgress.totalMediumSolved/categoricalProgress.totalMediumProblems*100}
+                    styles={buildStyles({
+                      pathColor: "rgb(255, 186, 58)",
+                      trailColor: "transparent",
+                    })}
+                  >
+                    <div style={{ width: "79%" }}>
+                      <CircularProgressbar
+                        value={categoricalProgress.totalHardSolved/categoricalProgress.totalHardProblems*100}
+                        text={`${categoricalProgress.totalSolved/categoricalProgress.totalProblems * 100 > 0 ? Math.round(categoricalProgress.totalSolved/categoricalProgress.totalProblems * 100) + "%" : ""}`}
+                        strokeWidth={10}
+                        styles={buildStyles({
+                          textColor: "#aaa",
+                          textSize: 20,
+                          pathColor: "rgb(255, 109, 109)",
+                          trailColor: "transparent",
+                        })}
+                      />
+                    </div>
+                  </CircularProgressbarWithChildren>
+                </div>
+              </CircularProgressbarWithChildren> : ""}
+            </div>
+            <div className="flex flex-col gap-5">
               <div className="time-container flex flex-row flex-wrap gap-5 items-center justify-center">
                 <div className="time-box w-[80px] h-[30px] easy-nohover border-[.1px] border-black dark:border-white flex flex-col justify-center items-center card select-none text-xs">
                   5-10 mins
@@ -276,8 +365,43 @@ export default function Questions() {
                 If you are a beginner, you can ignore this and follow at your
                 own pace.
               </div>
-            </>
-          )}
+              </div>
+            <div className="w-[80px]">
+              {categoricalProgress ? <CircularProgressbarWithChildren
+                value={categoricalProgress.topicEasyProblems !== 0 ? categoricalProgress.topicEasySolved / categoricalProgress.topicEasyProblems * 100 : 0}
+                strokeWidth={6}
+                styles={buildStyles({
+                  pathColor: "rgb(169, 242, 24)",
+                  trailColor: "transparent",
+                })}
+              >
+                <div style={{ width: "84%" }}>
+                  <CircularProgressbarWithChildren
+                    value={categoricalProgress.topicMediumSolved/categoricalProgress.topicMediumProblems * 100}
+                    styles={buildStyles({
+                      pathColor: "rgb(255, 186, 58)",
+                      trailColor: "transparent",
+                    })}
+                  >
+                    <div style={{ width: "79%" }}>
+                      <CircularProgressbar
+                        value={categoricalProgress.topicHardSolved / categoricalProgress.topicHardProblems * 100}
+                        text={`${categoricalProgress.topicSolved/categoricalProgress.topicProblems * 100 > 0 ? Math.round(categoricalProgress.topicSolved/categoricalProgress.topicProblems * 100) + "%" : ""}`}
+                        strokeWidth={10}
+                        styles={buildStyles({
+                          textColor: "#aaa",
+                          textSize: 20,
+                          pathColor: "rgb(255, 109, 109)",
+                          trailColor: "transparent",
+                        })}
+                      />
+                    </div>
+                  </CircularProgressbarWithChildren>
+                </div>
+              </CircularProgressbarWithChildren> : ""}
+            </div>
+          </div>
+          
         </div>
         <div className="questions-container flex flex-row flex-wrap items-center justify-center gap-10 mt-5 md:mx-16">
           {readyToShow &&

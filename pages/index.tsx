@@ -60,6 +60,11 @@ const Home: NextPage = () => {
       setMediumSolved(mediumSolved);
       setHardSolved(hardSolved);
     }, 300);
+    const categoricalProgress = {
+      easyProblems, easySolved, mediumProblems, mediumSolved, hardProblems, hardSolved
+    }
+    console.log(categoricalProgress);
+    localStorage.setItem("categoricalProgress", JSON.stringify(categoricalProgress));
     settotalProblems(totalProblems);
   }, []);
 
@@ -119,21 +124,7 @@ const Home: NextPage = () => {
               </div>
             </CircularProgressbarWithChildren>
           </div>
-        ) : (
-          <div className="progress-container mt-10 w-[100px]">
-            <CircularProgressbar
-              value={0}
-              text={`Start Solving`}
-              styles={buildStyles({
-                strokeLinecap: "butt",
-                textSize: "12",
-                textColor: "transparent",
-                trailColor: "transparent",
-                pathColor: "transparent",
-              })}
-            />
-          </div>
-        )}
+        ) : ""}
         <div className="cards-container mt-10 md:mt-12 flex flex-row flex-wrap justify-center gap-10">
           {questionData.map((topic, index) => {
             return (
