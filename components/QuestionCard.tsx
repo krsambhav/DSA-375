@@ -72,7 +72,7 @@ export default function QuestionCard({
       </div>
       {showNotes && (
         <div
-          className="notes-container fixed top-0 left-0 w-screen h-screen flex flex-col justify-start pt-10 items-center backdrop-blur-xl"
+          className="notes-container fixed top-20 left-0 w-screen h-screen flex flex-col justify-start pt-10 items-center backdrop-blur-xl"
           onKeyDown={(e) => {
             if (e.key === "Escape") {
               handleNotesEdit(notesData, url, index);
@@ -93,11 +93,12 @@ export default function QuestionCard({
               setShowNotes(false);
             }}
           />
+          <div className="topic-title mb-3 font-thin">{title} [Difficulty: {level}]</div>
           <textarea
             autoFocus
             name=""
             id=""
-            className="z-20 h-[70vh] w-[90vw] text-black border border-black outline-none p-2 font-mono text-base resize-none dark:text-white dark:border-white dark:border-[.1px] dark:bg-black"
+            className="z-20 h-[65vh] w-[90vw] text-black border border-black outline-none p-2 font-mono text-base resize-none dark:text-white dark:border-white dark:border-[.1px] dark:bg-black"
             onChange={(e) => setNotesData(e.target.value)}
             value={notesData}
             placeholder="Type your notes here..."
