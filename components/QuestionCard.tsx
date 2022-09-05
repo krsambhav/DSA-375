@@ -72,7 +72,7 @@ export default function QuestionCard({
       </div>
       {showNotes && (
         <div
-          className="notes-container fixed top-20 left-0 w-screen h-screen flex flex-col justify-start pt-10 items-center backdrop-blur-xl"
+          className="notes-container fixed top-0 left-0 w-screen h-screen flex flex-col justify-start pt-32 items-center backdrop-blur-xl"
           onKeyDown={(e) => {
             if (e.key === "Escape") {
               handleNotesEdit(notesData, url, index);
