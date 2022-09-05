@@ -93,7 +93,7 @@ export default function QuestionCard({
               setShowNotes(false);
             }}
           />
-          <div className="topic-title mb-3 font-thin">{title} [Difficulty: {level}]</div>
+          <div className="topic-title mb-3 font-thin dark:text-white">{title} [Difficulty: {level}]</div>
           <textarea
             autoFocus
             name=""
