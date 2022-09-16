@@ -79,12 +79,12 @@ const Home: NextPage = () => {
       <main className="w-screen flex flex-col items-center p-10 md:px-24 min-h-screen select-none">
         <div className="title-container text-3xl">DSA 375</div>
         <a
-          href="https://www.youtube.com/c/ApnaCollegeOfficial"
+          href="https://github.com/krsambhav/"
           target={"_blank"}
           rel="noreferrer"
         >
           <div className="text-sm border-b py-[1px] border-gray-500 hover:border-black hover:px-[3px] text-gray-500 hover:text-black transition-all duration-150 dark:text-gray-400 dark:border-gray-400 dark:hover:text-white dark:hover:border-white">
-            By Apna College
+            By Kumar Sambhav
           </div>
         </a>
         {totalSolved && totalProblems ? (
