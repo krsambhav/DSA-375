@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Product Sans';
-  src: url('../public/assets/fonts/ProductSans-Light.ttf');
+  src: url('../public/assets/fonts/ProductSans-Regular.ttf');
 }
 
 @tailwind base;
